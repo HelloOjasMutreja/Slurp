@@ -205,7 +205,7 @@ const OrderSuccess = () => {
           {/* Delivery Info */}
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-200 dark:border-blue-700">
-              <div className="mb-2 flex justify-center text-blue-600 dark:text-blue-400"><Icon name="sun" size={28}/></div>
+              <div className="mb-2 flex justify-center text-blue-600 dark:text-blue-400"><Icon name="clock" size={28}/></div>
               <p className="text-sm text-gray-600 dark:text-gray-400">ETA</p>
               <p className="text-xl font-bold text-blue-600 dark:text-blue-400">20 mins</p>
             </div>

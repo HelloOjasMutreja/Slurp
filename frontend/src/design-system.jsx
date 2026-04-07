@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "./context/ThemeContext";
 
 /*─────────────────────────────────────────────────────────────
@@ -217,20 +217,14 @@ export const td = {
 
 /*─── TOKEN HOOK ───*/
 export const useT = () => {
-  try {
-    const { isDark } = useTheme();
-    return isDark ? td : t;
-  } catch {
-    return t;
-  }
+  const { isDark } = useTheme();
+  return isDark ? td : t;
 };
 
 /*─────────────────────────────────────────────────────────────
   GLOBAL CSS INJECTION
 ─────────────────────────────────────────────────────────────*/
 const globalCss = `
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   body { margin: 0; }

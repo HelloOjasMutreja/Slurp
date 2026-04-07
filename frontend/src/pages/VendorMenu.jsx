@@ -122,10 +122,10 @@ const VendorMenu = () => {
         </div>
         
           {filterType !== 'all' && (
-          <div className="mb-6 text-sm text-gray-600 dark:text-gray-400 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-lg inline-block animate-slide-down">
-            Showing <span className="font-bold text-[#C94B1D] dark:text-[#F37843]">{filteredMenuItems.length}</span> {filterType === 'veg' ? 'vegetarian' : 'non-vegetarian'} {filteredMenuItems.length === 1 ? 'item' : 'items'}
-          </div>
-        )}
+            <div className="mb-6 text-sm text-gray-600 dark:text-gray-400 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-lg inline-block animate-slide-down">
+              Showing <span className="font-bold text-[#C94B1D] dark:text-[#F37843]">{filteredMenuItems.length}</span> {filterType === 'veg' ? 'vegetarian' : 'non-vegetarian'} {filteredMenuItems.length === 1 ? 'item' : 'items'}
+            </div>
+          )}
         
         {/* Menu Grid with Enhanced Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

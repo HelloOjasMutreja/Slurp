@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { walletAPI } from '../utils/api';
 import { Icon } from '../design-system';
 
+const inlineIconStyle = { display: 'inline', verticalAlign: 'middle' };
+
 const Cart = () => {
   const { cart, updateQuantity, removeFromCart, getTotal, clearCart } = useCart();
   const navigate = useNavigate();
@@ -218,7 +220,7 @@ const Cart = () => {
             onClick={handleCheckout}
             className="w-full mt-6 bg-[#C94B1D] dark:bg-[#E85A25] text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300 font-bold text-lg"
           >
-            Proceed to Checkout <Icon name="arrowR" size={18} color="#fff" style={{ display: 'inline', verticalAlign: 'middle' }}/>
+            Proceed to Checkout <Icon name="arrowR" size={18} color="#fff" style={inlineIconStyle}/>
           </button>
         </div>
       </div>
