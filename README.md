@@ -1,6 +1,9 @@
 # Slurp - Campus Food Delivery Platform
 
-[![Build and Test](https://github.com/HelloOjasMutreja/SRMiggy/actions/workflows/build.yml/badge.svg)](https://github.com/HelloOjasMutreja/SRMiggy/actions/workflows/build.yml)
+[![Build and Test](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/build.yml/badge.svg)](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/build.yml)
+[![Deploy to GitHub Pages](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/deploy.yml/badge.svg)](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/deploy.yml)
+
+🌐 **Live demo:** https://helloojasmutreja.github.io/Slurp/
 
 Slurp is a full-stack food delivery website designed for SRM students to order food online from Java Canteen vendors and get it delivered to their doorstep.
 
@@ -54,6 +57,23 @@ The app opens at **http://localhost:5173**
 | Customer | `customer` | `password` |
 | Admin    | `admin`    | `password` |
 | Vendor   | `vendor1`  | `password` |
+
+---
+
+## 🌐 GitHub Pages Deployment
+
+The frontend is automatically deployed to **https://helloojasmutreja.github.io/Slurp/** on every push to `main` via the `deploy.yml` workflow.
+
+### One-time setup (do this once in the repo settings)
+
+1. Go to **Settings → Pages** and set Source to **GitHub Actions**.
+2. *(Optional)* Go to **Settings → Variables → Actions** and add a repository variable:
+   - Name: `VITE_API_URL`
+   - Value: URL of your deployed backend, e.g. `https://your-backend.onrender.com/api`
+   
+   If this variable is not set, the frontend will try to call `http://localhost:8080/api` (works only for local testing).
+
+> **Note:** The backend is a Spring Boot server and cannot run on GitHub Pages. Deploy it separately (Render, Railway, Fly.io, etc.) and point `VITE_API_URL` at it.
 
 ---
 
