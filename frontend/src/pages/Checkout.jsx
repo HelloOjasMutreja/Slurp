@@ -305,7 +305,7 @@ const Checkout = () => {
                 >
                   <div className="flex justify-between items-center">
                     <div className="flex items-center">
-                      <span className="text-3xl mr-3">💳</span>
+                      <span className="mr-3 text-gray-500"><Icon name="creditCard" size={28}/></span>
                       <div>
                         <div className="font-bold text-gray-900 dark:text-white">Other Payment Methods</div>
                         <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
@@ -328,7 +328,7 @@ const Checkout = () => {
                 >
                   <div className="flex justify-between items-center">
                     <div className="flex items-center">
-                      <span className="mr-3 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+                      <span className="mr-3 text-gray-500"><Icon name="creditCard" size={28}/></span>
                       <div>
                         <div className="font-bold text-gray-900 dark:text-white">Cash on Delivery</div>
                         <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">

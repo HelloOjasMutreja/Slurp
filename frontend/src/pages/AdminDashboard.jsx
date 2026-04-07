@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { adminAPI } from '../utils/api';
+import { Icon } from '../design-system';
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
@@ -182,7 +183,7 @@ const AdminDashboard = () => {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{vendor.name}</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">{vendor.description}</p>
                 <div className="mt-3 flex items-center justify-between">
-                  <span className="flex items-center gap-1 text-yellow-500 dark:text-yellow-400 font-bold"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg> {vendor.rating}</span>
+                  <span className="flex items-center gap-1 text-yellow-500 dark:text-yellow-400 font-bold"><Icon name="star" size={14} color="currentColor"/> {vendor.rating}</span>
                   <span
                     className={`px-3 py-1 text-xs font-semibold rounded-full ${
                       vendor.active

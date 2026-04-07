@@ -1,5 +1,6 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import { Icon } from '../design-system';
 
 const OrderSuccess = () => {
   const { orderId } = useParams();
@@ -204,17 +205,17 @@ const OrderSuccess = () => {
           {/* Delivery Info */}
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-200 dark:border-blue-700">
-              <div className="text-3xl mb-2 flex justify-center">⏱</div>
+              <div className="mb-2 flex justify-center text-blue-600 dark:text-blue-400"><Icon name="sun" size={28}/></div>
               <p className="text-sm text-gray-600 dark:text-gray-400">ETA</p>
               <p className="text-xl font-bold text-blue-600 dark:text-blue-400">20 mins</p>
             </div>
             <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-200 dark:border-green-700">
-              <div className="text-3xl mb-2 flex justify-center text-green-600 dark:text-green-400 font-bold text-lg">📍</div>
+              <div className="mb-2 flex justify-center text-green-600 dark:text-green-400"><Icon name="checkCirc" size={28}/></div>
               <p className="text-sm text-gray-600 dark:text-gray-400">Status</p>
               <p className="text-xl font-bold text-green-600 dark:text-green-400">In Transit</p>
             </div>
             <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-xl text-center border border-orange-200 dark:border-orange-700">
-              <div className="text-3xl mb-2 flex justify-center">🛵</div>
+              <div className="mb-2 flex justify-center text-[#C94B1D] dark:text-[#F37843]"><Icon name="arrowR" size={28}/></div>
               <p className="text-sm text-gray-600 dark:text-gray-400">Rider</p>
               <p className="text-xl font-bold text-[#C94B1D] dark:text-[#F37843]">On the way</p>
             </div>

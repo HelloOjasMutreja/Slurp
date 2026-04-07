@@ -218,7 +218,7 @@ const Cart = () => {
             onClick={handleCheckout}
             className="w-full mt-6 bg-[#C94B1D] dark:bg-[#E85A25] text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300 font-bold text-lg"
           >
-            Proceed to Checkout <Icon name="arrowR" size={18} color="#fff" style={{display:'inline',verticalAlign:'middle'}}/>
+            Proceed to Checkout <Icon name="arrowR" size={18} color="#fff" style={{ display: 'inline', verticalAlign: 'middle' }}/>
           </button>
         </div>
       </div>
