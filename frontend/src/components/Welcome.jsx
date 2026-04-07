@@ -20,7 +20,7 @@ const Welcome = ({ onComplete }) => {
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-primary via-orange-500 to-secondary overflow-hidden" style={{ zIndex: 9999 }}>
+    <div className="fixed inset-0 flex items-center justify-center bg-primary overflow-hidden" style={{ zIndex: 9999 }}>
       {/* Animated background circles */}
       <div className="absolute w-96 h-96 bg-white/10 rounded-full -top-20 -left-20 animate-[ping_3s_ease-in-out_infinite]"></div>
       <div className="absolute w-64 h-64 bg-white/10 rounded-full -bottom-10 -right-10 animate-[ping_4s_ease-in-out_infinite]"></div>
@@ -31,12 +31,10 @@ const Welcome = ({ onComplete }) => {
         {/* Main title with slide-in animation */}
         <h1 className="text-6xl md:text-8xl font-black text-white mb-6 animate-[slideInDown_1s_ease-out]">
           <span className="inline-block animate-[bounce_2s_ease-in-out_infinite]">S</span>
-          <span className="inline-block animate-[bounce_2s_ease-in-out_0.1s_infinite]">R</span>
-          <span className="inline-block animate-[bounce_2s_ease-in-out_0.2s_infinite]">M</span>
-          <span className="inline-block animate-[bounce_2s_ease-in-out_0.3s_infinite]">i</span>
-          <span className="inline-block animate-[bounce_2s_ease-in-out_0.4s_infinite]">g</span>
-          <span className="inline-block animate-[bounce_2s_ease-in-out_0.5s_infinite]">g</span>
-          <span className="inline-block animate-[bounce_2s_ease-in-out_0.6s_infinite]">y</span>
+          <span className="inline-block animate-[bounce_2s_ease-in-out_0.1s_infinite]">l</span>
+          <span className="inline-block animate-[bounce_2s_ease-in-out_0.2s_infinite]">u</span>
+          <span className="inline-block animate-[bounce_2s_ease-in-out_0.3s_infinite]">r</span>
+          <span className="inline-block animate-[bounce_2s_ease-in-out_0.4s_infinite]">p</span>
         </h1>
         
         {/* Subtitle with fade and slide animation */}

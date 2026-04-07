@@ -169,16 +169,16 @@ const Checkout = () => {
   const total = baseTotal - loyaltyDiscount;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-8 transition-all duration-500">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-all duration-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="backdrop-blur-lg bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-glass dark:shadow-dark-glass p-8 border border-gray-200/50 dark:border-gray-700/50 animate-slide-up">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent mb-8">
+          <h1 className="text-3xl font-bold text-primary-600 dark:text-orange-400 mb-8">
             Checkout
           </h1>
 
           <div className="space-y-8">
             {/* Delivery Details */}
-            <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-700/50 dark:to-gray-800/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
+            <div className="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                 <span className="mr-2">📍</span> Delivery Details
               </h2>
@@ -213,12 +213,12 @@ const Checkout = () => {
             </div>
 
             {/* Delivery Slot Selection */}
-            <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-700/50 dark:to-gray-800/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
+            <div className="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                 <span className="mr-2">⏰</span> Select Delivery Slot
               </h2>
               {!isOrderingOpen ? (
-                <div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/30 dark:to-red-800/30 border-2 border-red-400 dark:border-red-500 rounded-xl p-6 text-center animate-fade-in">
+                <div className="bg-red-50 dark:bg-red-900/30 border-2 border-red-400 dark:border-red-500 rounded-xl p-6 text-center animate-fade-in">
                   <div className="text-red-600 dark:text-red-400 text-xl font-bold mb-3 flex items-center justify-center">
                     <span className="text-3xl mr-2">⏰</span> Ordering Closed for Today
                   </div>
@@ -227,7 +227,7 @@ const Checkout = () => {
                   </p>
                 </div>
               ) : slots.length === 0 ? (
-                <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/30 dark:to-yellow-800/30 border-2 border-yellow-400 dark:border-yellow-500 rounded-xl p-6 text-center animate-fade-in">
+                <div className="bg-yellow-50 dark:bg-yellow-900/30 border-2 border-yellow-400 dark:border-yellow-500 rounded-xl p-6 text-center animate-fade-in">
                   <div className="text-yellow-600 dark:text-yellow-400 text-xl font-bold mb-3 flex items-center justify-center">
                     <span className="text-3xl mr-2">⚠️</span> No Available Slots
                   </div>
@@ -243,7 +243,7 @@ const Checkout = () => {
                       onClick={() => setSelectedSlot(slot.id.toString())}
                       className={`p-5 border-2 rounded-xl text-center transition-all duration-300 font-semibold animate-fade-in ${
                         selectedSlot === slot.id.toString()
-                          ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-orange-50 dark:from-primary-900/30 dark:to-orange-900/30 shadow-glow scale-105 text-primary-700 dark:text-orange-300'
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 shadow-glow scale-105 text-primary-700 dark:text-orange-300'
                           : 'border-gray-300 dark:border-gray-600 hover:border-primary-400 dark:hover:border-orange-400 hover:scale-105 hover:shadow-lg bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                       }`}
                       style={{ animationDelay: `${index * 100}ms` }}
@@ -261,7 +261,7 @@ const Checkout = () => {
             </div>
 
             {/* Payment Method Selection */}
-            <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-700/50 dark:to-gray-800/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
+            <div className="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                 <span className="mr-2">💳</span> Payment Method
               </h2>
@@ -270,7 +270,7 @@ const Checkout = () => {
                   onClick={() => setPaymentMethod('wallet')}
                   className={`p-5 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
                     paymentMethod === 'wallet'
-                      ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-orange-50 dark:from-primary-900/30 dark:to-orange-900/30 shadow-lg scale-[1.02]'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 shadow-lg scale-[1.02]'
                       : 'border-gray-300 dark:border-gray-600 hover:border-primary-400 dark:hover:border-orange-400 hover:scale-[1.01] bg-white dark:bg-gray-700'
                   }`}
                 >
@@ -298,7 +298,7 @@ const Checkout = () => {
                   onClick={() => setPaymentMethod('mock')}
                   className={`p-5 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
                     paymentMethod === 'mock'
-                      ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-orange-50 dark:from-primary-900/30 dark:to-orange-900/30 shadow-lg scale-[1.02]'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 shadow-lg scale-[1.02]'
                       : 'border-gray-300 dark:border-gray-600 hover:border-primary-400 dark:hover:border-orange-400 hover:scale-[1.01] bg-white dark:bg-gray-700'
                   }`}
                 >
@@ -321,7 +321,7 @@ const Checkout = () => {
                   onClick={() => setPaymentMethod('cod')}
                   className={`p-5 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
                     paymentMethod === 'cod'
-                      ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-orange-50 dark:from-primary-900/30 dark:to-orange-900/30 shadow-lg scale-[1.02]'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 shadow-lg scale-[1.02]'
                       : 'border-gray-300 dark:border-gray-600 hover:border-primary-400 dark:hover:border-orange-400 hover:scale-[1.01] bg-white dark:bg-gray-700'
                   }`}
                 >
@@ -344,15 +344,15 @@ const Checkout = () => {
             </div>
 
             {/* Campus Loyalty Program Section */}
-            <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-700/50 dark:to-gray-800/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
+            <div className="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                 <span className="mr-2">🏫</span> Campus Loyalty Program
               </h2>
-              <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/30 dark:via-indigo-900/30 dark:to-purple-900/30 rounded-2xl p-5 shadow-lg backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50">
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded-2xl p-5 shadow-lg backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50">
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between items-center bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg">
                     <span className="text-gray-700 dark:text-gray-300 font-medium">Available Points:</span>
-                    <span className="font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                    <span className="font-bold text-lg text-blue-600 dark:text-blue-400">
                       {loyaltyPoints.toFixed(1)} pts (₹{loyaltyPoints.toFixed(2)})
                     </span>
                   </div>
@@ -380,7 +380,7 @@ const Checkout = () => {
             </div>
 
             {/* Order Summary */}
-            <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-700/50 dark:to-gray-800/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
+            <div className="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-xl border border-gray-200/50 dark:border-gray-600/50">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                 <span className="mr-2">📋</span> Order Summary
               </h2>
@@ -420,7 +420,7 @@ const Checkout = () => {
                   )}
                   <div className="flex justify-between text-2xl font-bold text-gray-900 dark:text-white pt-3 border-t-2 dark:border-gray-600">
                     <span>Total</span>
-                    <span className="bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent">
+                    <span className="text-primary-600 dark:text-orange-400">
                       ₹{total.toFixed(2)}
                     </span>
                   </div>
@@ -431,7 +431,7 @@ const Checkout = () => {
             <button
               onClick={handlePlaceOrder}
               disabled={loading || !selectedSlot || !isOrderingOpen || (paymentMethod === 'wallet' && walletBalance < total)}
-              className="w-full bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 font-bold text-lg"
+              className="w-full bg-primary-500 dark:bg-orange-500 text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 font-bold text-lg"
             >
               {loading ? (
                 <span className="flex items-center justify-center">

@@ -4,10 +4,10 @@ const OrderFailed = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center transition-all duration-500 py-8 px-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center transition-all duration-500 py-8 px-4">
       <div className="max-w-md w-full backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-dark-glass p-8 text-center border border-gray-200/50 dark:border-gray-700/50 animate-slide-up">
         <div className="mb-6">
-          <div className="mx-auto w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 dark:from-red-900/30 dark:to-red-800/30 rounded-full flex items-center justify-center shadow-lg animate-bounce-soft">
+          <div className="mx-auto w-20 h-20 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center shadow-lg animate-bounce-soft">
             <svg
               className="w-12 h-12 text-red-600 dark:text-red-400"
               fill="none"
@@ -45,7 +45,7 @@ const OrderFailed = () => {
         <div className="space-y-3">
           <button
             onClick={() => navigate('/checkout')}
-            className="w-full bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+            className="w-full bg-primary-500 dark:bg-orange-500 text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
           >
             Try Again
           </button>

@@ -42,7 +42,7 @@ const AdminDashboard = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-500">
+      <div className="flex justify-center items-center min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-500">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary-500 dark:border-orange-500 mx-auto mb-4"></div>
           <div className="text-xl text-gray-600 dark:text-gray-400 animate-pulse-soft">Loading dashboard...</div>
@@ -52,9 +52,9 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-8 transition-all duration-500">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent mb-8 animate-slide-up">🛠️ Admin Dashboard</h1>
+        <h1 className="text-4xl font-bold text-primary-600 dark:text-orange-400 mb-8 animate-slide-up">🛠️ Admin Dashboard</h1>
 
         {/* Tabs */}
         <div className="mb-6 border-b border-gray-200 dark:border-gray-700">
@@ -92,7 +92,7 @@ const AdminDashboard = () => {
             </div>
             <div className="backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-dark-glass p-6 border border-gray-200/50 dark:border-gray-700/50 hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: '300ms' }}>
               <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium">Total Revenue</h3>
-              <p className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent mt-2">
+              <p className="text-3xl font-bold text-primary-600 dark:text-orange-400 mt-2">
                 ₹{stats.totalRevenue.toFixed(2)}
               </p>
             </div>

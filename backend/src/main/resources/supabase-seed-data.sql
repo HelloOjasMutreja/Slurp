@@ -1,5 +1,5 @@
 -- ========================================
--- SRMiggy Supabase Seed Data
+-- Slurp Supabase Seed Data
 -- ========================================
 -- Run this after creating the schema to populate initial test data
 -- This creates sample users, vendors, menu items, and delivery slots
@@ -16,12 +16,12 @@
 
 -- Insert test users
 INSERT INTO users (id, username, email, password, full_name, phone, address, role, enabled, wallet_balance, loyalty_points) VALUES
-  ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'customer', 'customer@srmiggy.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Test Customer', '9876543210', 'Building A, Room 101, SRM University', 'CUSTOMER', true, 1000.0, 150.0),
-  ('b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'vendor1', 'vendor1@srmiggy.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Vendor Owner 1', '9876543211', 'Shop 1, Food Court', 'VENDOR', true, 0.0, 0.0),
-  ('c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a33', 'vendor2', 'vendor2@srmiggy.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Vendor Owner 2', '9876543212', 'Shop 2, Food Court', 'VENDOR', true, 0.0, 0.0),
-  ('d3eebc99-9c0b-4ef8-bb6d-6bb9bd380a44', 'admin', 'admin@srmiggy.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Admin User', '9876543213', 'Admin Office', 'ADMIN', true, 0.0, 0.0),
-  ('e4eebc99-9c0b-4ef8-bb6d-6bb9bd380a55', 'rider1', 'rider1@srmiggy.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Rider One', '9876543214', 'Delivery Hub', 'RIDER', true, 0.0, 0.0),
-  ('f5eebc99-9c0b-4ef8-bb6d-6bb9bd380a66', 'customer2', 'customer2@srmiggy.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Test Customer 2', '9876543215', 'Building B, Room 202, SRM University', 'CUSTOMER', true, 500.0, 50.0);
+  ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'customer', 'customer@slurp.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Test Customer', '9876543210', 'Building A, Room 101, SRM University', 'CUSTOMER', true, 1000.0, 150.0),
+  ('b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'vendor1', 'vendor1@slurp.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Vendor Owner 1', '9876543211', 'Shop 1, Food Court', 'VENDOR', true, 0.0, 0.0),
+  ('c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a33', 'vendor2', 'vendor2@slurp.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Vendor Owner 2', '9876543212', 'Shop 2, Food Court', 'VENDOR', true, 0.0, 0.0),
+  ('d3eebc99-9c0b-4ef8-bb6d-6bb9bd380a44', 'admin', 'admin@slurp.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Admin User', '9876543213', 'Admin Office', 'ADMIN', true, 0.0, 0.0),
+  ('e4eebc99-9c0b-4ef8-bb6d-6bb9bd380a55', 'rider1', 'rider1@slurp.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Rider One', '9876543214', 'Delivery Hub', 'RIDER', true, 0.0, 0.0),
+  ('f5eebc99-9c0b-4ef8-bb6d-6bb9bd380a66', 'customer2', 'customer2@slurp.com', '$2a$10$rqzJWZKJ3Cr.Yj6E1uHYme4xQFrHx4qJkFqBTHlCU8Yj9RvQPmU7O', 'Test Customer 2', '9876543215', 'Building B, Room 202, SRM University', 'CUSTOMER', true, 500.0, 50.0);
 
 -- ========================================
 -- 2. DELIVERY SLOTS

@@ -1,553 +1,226 @@
-# SRMiggy - Campus Food Delivery Platform
+# Slurp - Campus Food Delivery Platform
 
-[![Build and Test](https://github.com/Vedanthdamn/SRMiggy/actions/workflows/build.yml/badge.svg)](https://github.com/Vedanthdamn/SRMiggy/actions/workflows/build.yml)
+[![Build and Test](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/build.yml/badge.svg)](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/build.yml)
+[![Deploy to GitHub Pages](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/deploy.yml/badge.svg)](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/deploy.yml)
 
-SRMiggy is a full-stack food delivery website designed for SRM students to order food online from Java Canteen vendors and get it delivered to their doorstep.
+🌐 **Live demo:** https://helloojasmutreja.github.io/Slurp/
 
-## 🚀 Features
+Slurp is a full-stack food delivery website designed for SRM students to order food online from Java Canteen vendors and get it delivered to their doorstep.
 
-### Core Features
-- **User Authentication**: JWT-based secure authentication with role-based access (Customer, Vendor, Admin, Rider)
-- **Vendor Management**: Browse multiple vendors with beautiful, modern cards
-- **Shopping Cart**: Add items to cart with real-time updates and smooth animations
-- **Order Management**: Place orders with smart fee calculations
-- **Digital Wallet**: Students can add money to their wallet and use it for payments
-- **Payment Integration**: Supports both wallet payment and mock payment provider for testing
-- **Admin Dashboard**: View statistics, manage orders and vendors
-
-### 🎨 Modern UI/UX Enhancements
-- **Professional Design**: Modern, glassy interface with smooth gradients and backdrop blur effects
-- **Micro Animations**: Subtle animations on buttons, cards, toggles, and interactions for delightful user experience
-- **Dark Mode**: Seamless dark/light mode toggle with smooth transitions across all components
-- **Responsive Design**: Fully responsive layout optimized for mobile, tablet, and desktop
-- **Hover Effects**: Interactive hover states with scale transformations and shadow effects
-- **Gradient Accents**: Beautiful gradient color schemes throughout the application
-
-### 🍽️ Smart Menu Features
-- **Veg/Non-Veg Toggle**: Dynamic filtering of menu items by dietary preference
-  - **All** - View complete menu
-  - **🟢 Veg** - Show only vegetarian items
-  - **🔴 Non-Veg** - Show only non-vegetarian items
-- **Visual Indicators**: Clear badges on food cards showing veg/non-veg status
-- **Item Count Display**: Shows number of filtered items dynamically
-
-### 💰 Dynamic Pricing & Fees
-- **Smart Delivery Fee**: ₹10 delivery fee automatically added for orders below ₹100
-- **Platform Fee**: ₹2 platform fee applied to all orders
-- **Real-time Calculations**: Total updates dynamically as you add/remove items
-- **Fee Transparency**: Clear breakdown showing subtotal, delivery fee, platform fee, and total
-
-### ⏰ Time-Based Ordering (11 AM – 7 PM)
-- **Operating Hours**: Orders accepted only between 11 AM and 7 PM
-- **Dynamic Slot Display**: Shows only available delivery slots based on current time
-- **Ordering Window**: System automatically detects if ordering is closed
-- **Smart Scheduling**: Backend validates slot availability in real-time
-
-### 🏫 Campus Loyalty Program
-- **Earn Points**: Get 0.5 loyalty points for every ₹100 spent on food
-- **Redeem Points**: Use your points for discounts (1 point = ₹1 off)
-- **Automatic Tracking**: Points are automatically added to your account after successful payment
-- **Flexible Usage**: Toggle points on/off in the cart to choose when to redeem
-- **Visual Feedback**: See available points and points to earn prominently displayed in cart
-
-## 🏫 Campus Loyalty Program
-
-SRMiggy rewards students for every order with our Campus Loyalty Program!
-
-### How It Works:
-- **Earn Points**: Get 0.5 loyalty points for every ₹100 spent on food
-- **Redeem Points**: Use your points for discounts (1 point = ₹1 off)
-- **Automatic Tracking**: Points are automatically added to your account after successful payment
-- **Flexible Usage**: Toggle points on/off in the cart to choose when to redeem
-- **Visual Display**: See available points and points you'll earn beautifully displayed in cart
-
-### Using Loyalty Points:
-1. Add items to your cart and proceed to cart page
-2. View your available loyalty points and points you'll earn from this order in the glassy loyalty card
-3. Toggle "Use Loyalty Points" to apply your points as a discount
-4. Your points will be deducted from the order total at checkout
-5. After payment, new points from this order are automatically credited to your account
-
-### Example:
-- Order total: ₹200
-- Available points: 50 pts
-- Toggle on to save ₹50
-- Final total: ₹150
-- After payment, earn 1 point (0.5 × 2) from this ₹200 order
-
-## 📸 Screenshots
-
-### Home Page (Light Mode)
-![Home Page Light](https://github.com/user-attachments/assets/daa8d4d3-ae9c-4b05-9cce-bf399a26b91d)
-*Modern, gradient-based home page with vendor cards featuring hover effects and smooth animations*
-
-### Home Page (Dark Mode)
-![Home Page Dark](https://github.com/user-attachments/assets/74fba67d-6cae-4b7f-8cb4-2c183b2e58aa)
-*Seamless dark mode with smooth transitions and enhanced visual appeal*
-
-### Vendor Menu with Filter
-![Vendor Menu](https://github.com/user-attachments/assets/15abefdb-e377-4684-86e5-dee1582e478d)
-*Dynamic Veg/Non-Veg toggle filters with glassy UI elements and modern card designs*
-
-### Veg Filter Active
-![Veg Filter](https://github.com/user-attachments/assets/5734551f-f1f4-47ad-88af-d2e3c942fe3d)
-*Showing only vegetarian items with clear count display and smooth filtering animation*
-
-## 📋 Tech Stack
-
-### Backend
-- Java 17
-- Spring Boot 3.2.0
-- Spring Security (JWT)
-- Spring Data JPA
-- H2 Database (development) / **PostgreSQL via Supabase (production)**
-- HikariCP Connection Pooling
-- Maven
-
-### Frontend
-- React 18
-- React Router DOM
-- Axios
-- **Tailwind CSS v4.1.14** - Modern utility-first CSS framework
-- Vite - Lightning-fast build tool
-- **Custom Animations** - Smooth transitions and micro-interactions
-
-### Design Features
-- **Gradient System**: Beautiful orange-to-red gradients for primary actions
-- **Glassy Morphism**: Backdrop blur effects for modern card designs
-- **Animation Library**: Custom keyframe animations for fade-in, slide-up, scale, bounce, pulse, and shimmer effects
-- **Shadow System**: Multiple shadow variants including glow effects for buttons
-- **Dark Mode Support**: Complete dark theme with optimized colors and contrasts
-
-## 🛠️ Setup Instructions
+## 🚀 Quick Start (Run Locally)
 
 ### Prerequisites
-- Java 17 or higher
-- Maven 3.6+
-- Node.js 16+ and npm
 
-### Backend Setup
+Make sure you have the following installed:
+- **Java 17+** — [Download from adoptium.net](https://adoptium.net/)
+- **Maven 3.6+** — Typically included with Java; verify with `mvn -v`
+- **Node.js 18+ and npm** — [Download from nodejs.org](https://nodejs.org/)
 
-1. Navigate to the backend directory:
+---
+
+### Step 1 — Start the Backend
+
 ```bash
 cd backend
-```
-
-2. Run the application:
-```bash
 mvn spring-boot:run
 ```
 
-The backend server will start on `http://localhost:8080`
+The backend starts at **http://localhost:8080**
 
-**Database Tables**: Tables are automatically created on startup using Hibernate's `ddl-auto=update` mode. No manual SQL script execution is required. See [DATABASE_CONFIGURATION.md](DATABASE_CONFIGURATION.md) for detailed information.
+> Tables and seed data are automatically created on startup — no manual SQL needed.
 
-**H2 Console Access**: `http://localhost:8080/h2-console`
-- JDBC URL: `jdbc:h2:mem:srmiggydb`
-- Username: `sa`
-- Password: (leave empty)
+**H2 Database Console (dev only):** http://localhost:8080/h2-console  
+- JDBC URL: `jdbc:h2:mem:testdb`  
+- Username: `sa`  
+- Password: *(leave empty)*
 
-### Frontend Setup
+---
 
-1. Navigate to the frontend directory:
+### Step 2 — Start the Frontend
+
+In a separate terminal:
+
 ```bash
 cd frontend
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-The frontend will start on `http://localhost:5173`
+The app opens at **http://localhost:5173**
 
-## 🔑 Default Test Accounts
+---
 
-The application comes with pre-seeded data for testing:
+### Step 3 — Log In
 
-### Customer Account
-- Username: `customer`
-- Password: `password`
+| Role     | Username   | Password   |
+|----------|------------|------------|
+| Customer | `customer` | `password` |
+| Admin    | `admin`    | `password` |
+| Vendor   | `vendor1`  | `password` |
 
-### Admin Account
-- Username: `admin`
-- Password: `password`
+---
 
-### Vendor Account
-- Username: `vendor1`
-- Password: `password`
+## 🌐 GitHub Pages Deployment
 
-## 📊 Seeded Data
+The frontend is automatically deployed to **https://helloojasmutreja.github.io/Slurp/** on every push to `main` via the `deploy.yml` workflow.
 
-- **8 Vendors**: 
-  - Biryani House (North Indian)
-  - Dosa Corner (South Indian)
-  - Burger Junction (American Fast Food)
-  - Pizza Paradise (Italian Pizzas)
-  - Thali Express (North Indian Thali)
-  - Roll Junction (Rolls & Wraps)
-  - Ice Cream Parlor (Ice Creams)
-  - Dessert House (Desserts)
-- **128 Menu Items**: 16 items per vendor with proper veg/non-veg classification and affordable options under ₹100
-- **3 Delivery Slots**: Evening time slots
-- **3 Users**: Customer, Admin, and Vendor accounts
+### One-time setup (do this once in the repo settings)
 
-## 🔄 Complete User Flow
+1. Go to **Settings → Pages** and set Source to **GitHub Actions**.
+2. *(Optional)* Go to **Settings → Variables → Actions** and add a repository variable:
+   - Name: `VITE_API_URL`
+   - Value: URL of your deployed backend, e.g. `https://your-backend.onrender.com/api`
+   
+   If this variable is not set, the frontend will try to call `http://localhost:8080/api` (works only for local testing).
 
-1. **Browse Vendors**: Visit home page to see all available vendors
-2. **View Menu**: Click on a vendor to view their menu items
-3. **Add to Cart**: Select items and add them to your cart
-4. **Checkout**: Proceed to checkout, select delivery slot and address
-5. **Payment**: Choose between wallet payment or other payment methods
-6. **Order Confirmation**: Receive order confirmation with order ID
-7. **Track Orders**: View order history and status in "My Orders"
-8. **Manage Wallet**: Add money to wallet and view transaction history
+> **Note:** The backend is a Spring Boot server and cannot run on GitHub Pages. Deploy it separately (Render, Railway, Fly.io, etc.) and point `VITE_API_URL` at it.
 
-## 🎯 Business Rules
+---
 
-- **Operating Hours**: 11 AM – 7 PM daily for order placement
-- **Minimum Order**: ₹100 (orders below this incur ₹10 delivery fee)
-- **Platform Fee**: ₹2 (automatically added to all orders)
-- **Delivery Fee**: ₹10 (only for orders below ₹100)
-- **Loyalty Points**: Earn 0.5 points per ₹100 spent, 1 point = ₹1 discount
-- **Time Slot System**: Available slots shown based on current time
-- **Vendor Limitation**: Cart can only contain items from one vendor at a time
-- **Batch Delivery**: Orders grouped by vendor and slot for efficient delivery
+## 🎯 Features
 
-## 🔐 API Endpoints
+- **User Authentication** — JWT-based login with roles: Customer, Vendor, Admin, Rider
+- **Vendor Browsing** — Browse available food vendors with ratings and descriptions
+- **Shopping Cart** — Add items, adjust quantities, and review your order
+- **Smart Pricing** — ₹10 delivery fee for orders under ₹100; ₹2 platform fee always applied
+- **Payment Options** — Wallet balance or mock card/UPI payment; Cash on Delivery
+- **Digital Wallet** — Add funds and pay directly from your wallet
+- **Loyalty Points** — Earn 0.5 pts per ₹100 spent; redeem 1 pt = ₹1 off
+- **Time-Gated Ordering** — Orders accepted 11 AM – 7 PM only
+- **Order Tracking** — Live delivery map with animated rider movement
+- **Admin Dashboard** — View platform stats, manage orders and vendors
+- **Dark Mode** — Full dark/light theme toggle
 
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user
+---
 
-### Vendors
-- `GET /api/vendors` - Get all active vendors
-- `GET /api/vendors/{id}` - Get vendor details
+## 🏗️ Tech Stack
 
-### Menu
-- `GET /api/menu/vendor/{vendorId}` - Get vendor menu
+| Layer     | Technology                          |
+|-----------|-------------------------------------|
+| Backend   | Java 17, Spring Boot 3.2, Spring Security (JWT), Spring Data JPA |
+| Database  | H2 (dev) / PostgreSQL via Supabase (prod) |
+| Build     | Maven                               |
+| Frontend  | React 18, React Router, Axios       |
+| Styling   | Tailwind CSS v4                     |
+| Dev Build | Vite                                |
 
-### Orders
-- `POST /api/orders` - Create new order
-- `GET /api/orders` - Get user's orders
-- `GET /api/orders/{id}` - Get order details
-
-### Payments
-- `POST /api/payments/create-order` - Create payment order
-- `POST /api/payments/verify` - Verify payment
-- `POST /api/payments/pay-with-wallet` - Pay with wallet balance
-- `GET /api/payments/order/{orderId}` - Get payment status
-
-### Wallet
-- `POST /api/wallet/add-money` - Add money to wallet
-- `GET /api/wallet/balance` - Get wallet balance
-- `GET /api/wallet/transactions` - Get transaction history
-- `GET /api/wallet/loyalty-points` - Get current loyalty points
-- `GET /api/wallet/calculate-loyalty-points?orderTotal={amount}` - Calculate points for an order
-
-### Admin (Requires ADMIN role)
-- `GET /api/admin/orders` - Get all orders
-- `GET /api/admin/vendors` - Get all vendors
-- `GET /api/admin/stats` - Get platform statistics
-- `PUT /api/admin/orders/{id}/status` - Update order status
+---
 
 ## 📁 Project Structure
 
 ```
-SRMiggy2.0/
+SRMiggy/
 ├── backend/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/srmiggy/
-│   │   │   │   ├── config/          # Configuration classes
-│   │   │   │   ├── controller/      # REST controllers
-│   │   │   │   ├── dto/             # Data transfer objects
-│   │   │   │   ├── model/           # Entity models
-│   │   │   │   ├── repository/      # JPA repositories
-│   │   │   │   ├── security/        # Security & JWT
-│   │   │   │   ├── service/         # Business logic
-│   │   │   │   └── SrmiggyApplication.java
-│   │   │   └── resources/
-│   │   │       └── application.properties
-│   │   └── test/
-│   └── pom.xml
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/          # Reusable components
-│   │   ├── context/             # React context (Auth, Cart)
-│   │   ├── pages/               # Page components
-│   │   ├── utils/               # Utility functions & API
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   └── tailwind.config.js
-│
-└── README.md
+│   └── src/main/
+│       ├── java/com/srmiggy/
+│       │   ├── config/        # Security, CORS, JWT config
+│       │   ├── controller/    # REST API controllers
+│       │   ├── dto/           # Request/response DTOs
+│       │   ├── model/         # JPA entities
+│       │   ├── repository/    # Spring Data repositories
+│       │   ├── security/      # JWT filter and utils
+│       │   └── service/       # Business logic
+│       └── resources/
+│           ├── application.properties
+│           └── data.sql       # Auto-seeded dev data
+└── frontend/
+    └── src/
+        ├── components/        # Shared UI components (Navbar, etc.)
+        ├── context/           # React context (Auth, Cart, Theme)
+        ├── pages/             # Page-level components
+        └── utils/             # API client (Axios)
 ```
 
-## 🧪 Testing the Application
+---
 
-1. Start both backend and frontend servers
-2. Open `http://localhost:5173` in your browser
-3. Register a new account or login with test credentials
-4. Browse vendors and add items to cart
-5. Complete the checkout process with mock payment
-6. View your order in "My Orders"
-7. Login as admin to access the admin dashboard
+## 🔐 API Reference
 
-## 🚀 Deployment Instructions
+| Method | Endpoint                              | Description               |
+|--------|---------------------------------------|---------------------------|
+| POST   | `/api/auth/register`                  | Register a new user       |
+| POST   | `/api/auth/login`                     | Login and get JWT token   |
+| GET    | `/api/vendors`                        | List all active vendors   |
+| GET    | `/api/menu/vendor/{id}`               | Get a vendor's menu       |
+| POST   | `/api/orders`                         | Place an order            |
+| GET    | `/api/orders`                         | Get current user's orders |
+| POST   | `/api/payments/pay-with-wallet`       | Pay via wallet            |
+| GET    | `/api/wallet/balance`                 | Get wallet balance        |
+| POST   | `/api/wallet/add-money`               | Top up wallet             |
+| GET    | `/api/wallet/loyalty-points`          | Get loyalty points        |
+| GET    | `/api/admin/stats`                    | Platform stats (Admin)    |
 
-### Building for Production
+---
 
-#### Backend Deployment
+## 🧪 Running Tests
 
-1. Navigate to the backend directory:
+```bash
+# Backend tests
+cd backend
+mvn test
+
+# Frontend lint check
+cd frontend
+npm run lint
+```
+
+---
+
+## 📦 Building for Production
+
+### Backend
+
 ```bash
 cd backend
-```
-
-2. Build the JAR file:
-```bash
 mvn clean package -DskipTests
+java -jar target/srmiggy-backend-1.0.0.jar
 ```
 
-3. The JAR file will be created at `target/srmiggy-0.0.1-SNAPSHOT.jar`
+### Frontend
 
-4. Run the JAR file:
-```bash
-java -jar target/srmiggy-0.0.1-SNAPSHOT.jar
-```
-
-**Production Configuration:**
-- Update `application.properties` with production database credentials
-- Set a strong JWT secret key
-- Configure CORS for your frontend domain
-- Enable HTTPS for secure communication
-
-#### Frontend Deployment (with Tailwind CSS)
-
-1. Navigate to the frontend directory:
 ```bash
 cd frontend
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Build the production bundle (includes compiled Tailwind CSS):
-```bash
 npm run build
+# Output: frontend/dist/
 ```
 
-The build output will be in the `dist/` directory with:
-- Optimized JavaScript bundles
-- Compiled and minified Tailwind CSS
-- Static assets and HTML
+Deploy `dist/` to Vercel, Netlify, or any static host. Set `VITE_API_URL` in `.env.production` to point to your backend:
 
-4. Preview the production build locally:
-```bash
-npm run preview
-```
-
-5. Deploy the `dist/` folder to your hosting service:
-   - **Vercel**: Connect your repository and set build command to `npm run build`
-   - **Netlify**: Drag and drop `dist/` folder or connect via Git
-   - **AWS S3 + CloudFront**: Upload `dist/` contents to S3 bucket
-   - **Nginx/Apache**: Copy `dist/` contents to web server root
-
-**Environment Variables for Production:**
-Create a `.env.production` file in the frontend directory:
 ```env
 VITE_API_URL=https://your-backend-domain.com/api
 ```
 
-Update API calls in `src/utils/api.js` to use `import.meta.env.VITE_API_URL`
+---
 
-### Deployment Checklist
+## 🗄️ Production Database (Supabase)
 
-**Backend:**
-- [ ] Update database configuration from H2 to PostgreSQL/MySQL
-- [ ] Set strong JWT secret key
-- [ ] Configure CORS for frontend domain
-- [ ] Enable HTTPS
-- [ ] Set up logging and monitoring
-- [ ] Configure production server port
-- [ ] Set up backup strategy for database
+To use Supabase PostgreSQL instead of H2:
 
-**Frontend:**
-- [ ] Build production bundle with `npm run build`
-- [ ] Verify Tailwind CSS styles are properly compiled in `dist/assets/*.css`
-- [ ] Update API endpoints to production backend URL
-- [ ] Enable HTTPS
-- [ ] Configure CDN for static assets (optional)
-- [ ] Set up monitoring and error tracking
-- [ ] Test responsive design on multiple devices
+1. Create a project at [supabase.com](https://supabase.com)
+2. Run `backend/src/main/resources/supabase-schema.sql` in the SQL Editor
+3. Run `backend/src/main/resources/supabase-seed-data.sql` for initial data
+4. Fill in your credentials in `backend/src/main/resources/application-supabase.properties`
+5. Start the backend with the Supabase profile:
 
-**Tailwind CSS Verification:**
-The production build automatically processes Tailwind CSS through PostCSS, generating optimized styles. To verify:
 ```bash
-# After building, check the compiled CSS includes Tailwind
-cat dist/assets/index-*.css | head -5
-# Should show: /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-```
-
-### Recommended Hosting Options
-
-**Backend:**
-- Heroku (easy deployment with Git)
-- AWS Elastic Beanstalk
-- Google Cloud Run
-- Railway
-- Render
-
-**Frontend:**
-- Vercel (recommended for React + Vite)
-- Netlify
-- AWS Amplify
-- Cloudflare Pages
-- GitHub Pages (with SPA routing configuration)
-
-**Full-Stack:**
-- AWS EC2 with Docker
-- DigitalOcean Droplets
-- Railway (backend + frontend)
-- Render (backend + frontend)
-
-## 🐛 Troubleshooting
-
-### Backend Issues
-- **Port 8080 already in use**: Change port in `application.properties`
-- **Database errors**: H2 is in-memory, restart will reset data
-- **JWT errors**: Check secret key in `application.properties`
-
-### Frontend Issues
-- **API connection errors**: Ensure backend is running on port 8080
-- **CORS errors**: Check CORS configuration in SecurityConfig
-- **Build errors**: Delete `node_modules` and run `npm install` again
-- **Tailwind styles not applying**: 
-  - Verify `index.css` contains `@tailwind` directives
-  - Check `tailwind.config.js` content paths include all component files
-  - Rebuild with `npm run build` to regenerate CSS
-
-### Deployment Issues
-- **Blank page after deployment**: Check browser console for API endpoint errors
-- **Tailwind CSS missing in production**: Verify `postcss.config.js` and `tailwind.config.js` are committed
-- **404 on page refresh**: Configure your hosting for SPA routing (redirect all routes to `index.html`)
-- **CORS errors in production**: Update backend CORS configuration with production frontend URL
-
-## 📝 Notes
-
-### Development Setup
-- This is a development setup with H2 in-memory database
-- **Tables are automatically created** on startup using Hibernate's `update` mode
-- **No manual SQL scripts needed** - the DataInitializer seeds all data automatically
-- See [DATABASE_CONFIGURATION.md](DATABASE_CONFIGURATION.md) for detailed database setup information
-- **For Production**: Use Supabase PostgreSQL (see setup guides below)
-- Tailwind CSS is configured with PostCSS and works in both dev and production builds
-- Frontend uses Vite for fast development and optimized production builds
-
-### Production Deployment with Supabase
-- ✅ **Supabase PostgreSQL Integration Available**
-- ✅ See [SUPABASE_SETUP.md](SUPABASE_SETUP.md) for complete setup guide
-- ✅ See [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) for migrating from H2 to Supabase
-- ✅ See [EXAMPLE_SERVICE_CODE.md](EXAMPLE_SERVICE_CODE.md) for code examples
-- Replace mock payment with actual provider (Razorpay/Stripe)
-- Update JWT secret key for production use
-- Add proper error handling and validation
-- Ensure Tailwind CSS is properly compiled in production build (automatically handled by Vite)
-- Use environment variables for sensitive configuration
-- Enable HTTPS for both frontend and backend
-- Set up proper database backups (automatic with Supabase)
-
-### Supabase Integration Features
-- ✅ UUID primary keys for better security and scalability
-- ✅ Row Level Security (RLS) for data isolation
-- ✅ HikariCP connection pooling for performance
-- ✅ Automatic timestamp tracking with database triggers
-- ✅ Professional PostgreSQL schema with indexes
-- ✅ Production-grade database with automatic backups
-
-### Quick Start with Supabase
-```bash
-# 1. Create Supabase project at https://supabase.com
-
-# 2. Run schema SQL FIRST in Supabase SQL Editor
-#    File: backend/src/main/resources/supabase-schema.sql
-#    This creates all tables
-
-# 3. Run migration SQL SECOND in Supabase SQL Editor  
-#    File: supabase_migration.sql (in root directory)
-#    This inserts vendor and menu data
-
-# 4. Update connection details in backend/src/main/resources/application-supabase.properties
-
-# 5. Run backend with Supabase profile
+cd backend
 mvn spring-boot:run -Dspring-boot.run.profiles=supabase
 ```
 
-**⚠️ IMPORTANT: Run scripts in order!** If you get "relation does not exist" error, see [SUPABASE_DATABASE_SETUP.md](SUPABASE_DATABASE_SETUP.md)
+---
 
-**✨ Migration Script Updated!** The `supabase_migration.sql` file now includes:
-- ✅ Table existence checks with helpful error messages
-- ✅ Handle Row Level Security (RLS) automatically
-- ✅ Idempotent (safe to re-run)
-- ✅ Atomic transactions
-- ✅ See [SUPABASE_DATABASE_SETUP.md](SUPABASE_DATABASE_SETUP.md) for complete setup guide
-- ✅ See [QUICKSTART_MIGRATION.md](QUICKSTART_MIGRATION.md) for quick reference
+## 🐛 Troubleshooting
 
-See detailed guides for complete instructions.
+| Problem | Fix |
+|---|---|
+| Port 8080 in use | Change `server.port` in `application.properties` |
+| Frontend can't reach backend | Make sure backend is running on port 8080 |
+| CORS errors | Check `cors.allowed-origins` in `application.properties` |
+| Build fails | Delete `node_modules/` and re-run `npm install` |
+| Blank page after deploy | Configure hosting to redirect all routes to `index.html` |
+| Data missing after restart | H2 is in-memory; data resets on each restart (expected in dev) |
 
-## 🔄 Continuous Integration / Continuous Deployment (CI/CD)
-
-The project uses GitHub Actions for automated builds and testing.
-
-### Build Workflow
-
-The workflow automatically runs on:
-- Push to `main` or `develop` branches
-- Pull requests targeting `main` or `develop` branches
-
-### What Gets Built and Tested
-
-**Backend:**
-- Compiles Java code with Maven
-- Runs unit tests
-- Packages the application as a JAR file
-- Uploads the JAR artifact for 7 days
-
-**Frontend:**
-- Installs npm dependencies
-- Runs ESLint for code quality
-- Builds the production bundle with Vite
-- Uploads the build artifact for 7 days
-
-### Viewing Build Status
-
-Check the build status badge at the top of this README or visit the [Actions tab](https://github.com/Vedanthdamn/SRMiggy/actions) in the repository.
-
-### Local Build Verification
-
-To verify builds locally before pushing:
-
-```bash
-# Backend
-cd backend
-mvn clean package
-
-# Frontend
-cd frontend
-npm install
-npm run lint
-npm run build
-```
+---
 
 ## 👥 Contributors
 

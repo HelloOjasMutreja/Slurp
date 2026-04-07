@@ -1,5 +1,5 @@
 -- ========================================
--- SRMiggy Supabase PostgreSQL Schema
+-- Slurp Supabase PostgreSQL Schema
 -- ========================================
 -- Run this script in your Supabase SQL Editor
 -- This creates all tables with UUID primary keys, proper relationships,
