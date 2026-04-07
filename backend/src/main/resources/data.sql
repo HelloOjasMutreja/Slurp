@@ -1,5 +1,5 @@
 -- ============================================
--- SRMiggy Restaurant and Menu Data Migration
+-- Slurp Restaurant and Menu Data Migration
 -- Generated from DataInitializer.java
 -- ============================================
 

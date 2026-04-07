@@ -35,7 +35,7 @@ const Orders = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-500">
+      <div className="flex justify-center items-center min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-500">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary-500 dark:border-orange-500 mx-auto mb-4"></div>
           <div className="text-xl text-gray-600 dark:text-gray-400 animate-pulse-soft">Loading orders...</div>
@@ -46,7 +46,7 @@ const Orders = () => {
 
   if (orders.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center transition-all duration-500">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center transition-all duration-500">
         <div className="text-center animate-fade-in">
           <div className="text-6xl mb-4 animate-bounce-soft">📦</div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">No orders yet</h2>
@@ -57,9 +57,9 @@ const Orders = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-8 transition-all duration-500">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-all duration-500">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent mb-8 animate-slide-up">📦 My Orders</h1>
+        <h1 className="text-3xl font-bold text-primary-600 dark:text-orange-400 mb-8 animate-slide-up">📦 My Orders</h1>
 
         <div className="space-y-6">
           {orders.map((order, index) => (
@@ -111,7 +111,7 @@ const Orders = () => {
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Total</p>
-                    <p className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent">
+                    <p className="text-2xl font-bold text-primary-600 dark:text-orange-400">
                       ₹{order.total.toFixed(2)}
                     </p>
                   </div>

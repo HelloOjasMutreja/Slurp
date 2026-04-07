@@ -43,14 +43,14 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center transition-all duration-500">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center transition-all duration-500">
         <div className="text-center animate-fade-in">
           <div className="mb-6 text-6xl animate-bounce-soft">🛒</div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Your cart is empty</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">Start adding delicious items!</p>
           <button
             onClick={() => navigate('/')}
-            className="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-orange-500 dark:to-orange-600 text-white px-8 py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+            className="bg-primary-500 dark:bg-orange-500 text-white px-8 py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
           >
             Browse Vendors
           </button>
@@ -60,11 +60,11 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-8 transition-all duration-500">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-all duration-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="backdrop-blur-lg bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-glass dark:shadow-dark-glass p-6 border border-gray-200/50 dark:border-gray-700/50 animate-slide-up">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold text-primary-600 dark:text-orange-400">
               Your Cart
             </h1>
             <button
@@ -94,14 +94,14 @@ const Cart = () => {
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 hover:from-gray-200 hover:to-gray-300 dark:hover:from-gray-600 dark:hover:to-gray-500 text-gray-900 dark:text-white transition-all duration-300 font-bold hover:scale-110 shadow-md"
+                    className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300 font-bold hover:scale-110 shadow-md"
                   >
                     -
                   </button>
                   <span className="w-10 text-center text-gray-900 dark:text-white font-semibold text-lg">{item.quantity}</span>
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-600 hover:from-primary-600 hover:to-orange-700 dark:hover:from-orange-600 dark:hover:to-orange-700 text-white transition-all duration-300 font-bold hover:scale-110 shadow-md hover:shadow-glow"
+                    className="w-10 h-10 rounded-full bg-primary-500 dark:bg-orange-500 hover:bg-primary-600 dark:hover:bg-orange-600 text-white transition-all duration-300 font-bold hover:scale-110 shadow-md hover:shadow-glow"
                   >
                     +
                   </button>
@@ -119,7 +119,7 @@ const Cart = () => {
             ))}
           </div>
 
-          <div className="border-t dark:border-gray-700 pt-4 space-y-3 bg-gradient-to-br from-gray-50 to-white dark:from-gray-700/50 dark:to-gray-800/50 p-4 rounded-xl">
+          <div className="border-t dark:border-gray-700 pt-4 space-y-3 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl">
             <div className="flex justify-between text-gray-700 dark:text-gray-300 text-lg">
               <span>Subtotal</span>
               <span className="font-semibold">₹{subtotal.toFixed(2)}</span>
@@ -142,7 +142,7 @@ const Cart = () => {
             )}
             <div className="flex justify-between text-2xl font-bold text-gray-900 dark:text-white pt-3 border-t dark:border-gray-600">
               <span>Total</span>
-              <span className="bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent">
+              <span className="text-primary-600 dark:text-orange-400">
                 ₹{total.toFixed(2)}
               </span>
             </div>
@@ -155,17 +155,17 @@ const Cart = () => {
 
           {/* Campus Loyalty Program Section */}
           <div className="border-t dark:border-gray-700 mt-6 pt-6">
-            <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/30 dark:via-indigo-900/30 dark:to-purple-900/30 rounded-2xl p-5 mb-4 shadow-lg backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 animate-slide-up">
+            <div className="bg-blue-50 dark:bg-blue-900/30 rounded-2xl p-5 mb-4 shadow-lg backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 animate-slide-up">
               <div className="flex items-center mb-3">
                 <span className="text-3xl mr-3 animate-bounce-soft">🏫</span>
-                <h3 className="font-bold text-xl bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                <h3 className="font-bold text-xl text-blue-600 dark:text-blue-400">
                   Campus Loyalty Program
                 </h3>
               </div>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between items-center bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg">
                   <span className="text-gray-700 dark:text-gray-300 font-medium">Available Points:</span>
-                  <span className="font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  <span className="font-bold text-lg text-blue-600 dark:text-blue-400">
                     {loyaltyPoints.toFixed(1)} pts (₹{loyaltyPoints.toFixed(2)})
                   </span>
                 </div>
@@ -180,12 +180,12 @@ const Cart = () => {
             </div>
 
             {loyaltyPoints > 0 && (
-              <div className="flex items-center justify-between p-4 bg-gradient-to-r from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 border-2 border-blue-200 dark:border-blue-600 rounded-xl hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 shadow-md hover:shadow-lg group">
+              <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-700 border-2 border-blue-200 dark:border-blue-600 rounded-xl hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 shadow-md hover:shadow-lg group">
                 <div className="flex items-center space-x-4">
                   <div 
                     className={`w-14 h-7 rounded-full transition-all duration-300 cursor-pointer ${
                       useLoyaltyPoints 
-                        ? 'bg-gradient-to-r from-blue-500 to-indigo-600 shadow-glow' 
+                        ? 'bg-blue-500 shadow-glow' 
                         : 'bg-gray-300 dark:bg-gray-600'
                     } relative`}
                     onClick={() => setUseLoyaltyPoints(!useLoyaltyPoints)}
@@ -216,7 +216,7 @@ const Cart = () => {
 
           <button
             onClick={handleCheckout}
-            className="w-full mt-6 bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300 font-bold text-lg"
+            className="w-full mt-6 bg-primary-500 dark:bg-orange-500 text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300 font-bold text-lg"
           >
             Proceed to Checkout →
           </button>

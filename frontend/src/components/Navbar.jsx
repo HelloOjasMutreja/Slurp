@@ -31,8 +31,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center group">
-            <span className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-orange-600 dark:from-orange-400 dark:to-orange-500 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-              SRMiggy
+            <span className="text-3xl font-bold text-primary-600 dark:text-orange-400 group-hover:scale-105 transition-transform duration-300">
+              Slurp
             </span>
           </Link>
 
@@ -40,7 +40,7 @@ const Navbar = () => {
             {/* Dark Mode Toggle with Enhanced Animation */}
             <button
               onClick={toggleTheme}
-              className="relative p-3 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 hover:from-gray-200 hover:to-gray-300 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
+              className="relative p-3 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
               aria-label="Toggle dark mode"
             >
               <div className="relative">
@@ -87,7 +87,7 @@ const Navbar = () => {
                 >
                   Cart
                   {getItemCount() > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg animate-bounce-soft">
+                    <span className="absolute -top-2 -right-2 bg-primary-500 dark:bg-orange-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg animate-bounce-soft">
                       {getItemCount()}
                     </span>
                   )}
@@ -96,7 +96,7 @@ const Navbar = () => {
                   <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">👤 {user?.username}</span>
                   <button
                     onClick={logout}
-                    className="bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 text-white px-4 py-2 rounded-lg hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+                    className="bg-primary-500 dark:bg-orange-500 text-white px-4 py-2 rounded-lg hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
                   >
                     Logout
                   </button>
@@ -112,7 +112,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 text-white px-6 py-2 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+                  className="bg-primary-500 dark:bg-orange-500 text-white px-6 py-2 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
                 >
                   Register
                 </Link>

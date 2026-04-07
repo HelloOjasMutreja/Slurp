@@ -15,8 +15,8 @@
     <groupId>com.srmiggy</groupId>
     <artifactId>srmiggy-backend</artifactId>
     <version>1.0.0</version>
-    <name>SRMiggy Backend</name>
-    <description>Backend for SRMiggy Food Delivery Platform</description>
+    <name>Slurp Backend</name>
+    <description>Backend for Slurp Food Delivery Platform</description>
     
     <properties>
         <java.version>17</java.version>

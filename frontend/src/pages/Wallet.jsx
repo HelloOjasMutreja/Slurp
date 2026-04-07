@@ -61,12 +61,12 @@ const Wallet = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-8 transition-all duration-500">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-all duration-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 animate-slide-up">💰 My Wallet</h1>
 
         {/* Balance Card */}
-        <div className="bg-gradient-to-r from-primary-500 to-purple-600 dark:from-orange-500 dark:to-purple-700 rounded-2xl shadow-lg dark:shadow-dark-glass p-8 mb-8 text-white animate-fade-in border border-purple-200/50 dark:border-purple-700/50">
+        <div className="bg-primary-500 dark:bg-orange-500 rounded-2xl shadow-lg dark:shadow-dark-glass p-8 mb-8 text-white animate-fade-in border border-purple-200/50 dark:border-purple-700/50">
           <div className="flex justify-between items-center">
             <div>
               <p className="text-sm opacity-90 mb-2">Available Balance</p>
@@ -110,7 +110,7 @@ const Wallet = () => {
             <button
               type="submit"
               disabled={loading}
-              className="bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 text-white px-6 py-3 rounded-xl hover:shadow-glow hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 font-semibold"
+              className="bg-primary-500 dark:bg-orange-500 text-white px-6 py-3 rounded-xl hover:shadow-glow hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 font-semibold"
             >
               {loading ? 'Processing...' : 'Add Money'}
             </button>

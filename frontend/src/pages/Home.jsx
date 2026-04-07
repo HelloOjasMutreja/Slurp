@@ -23,7 +23,7 @@ const Home = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-500">
+      <div className="flex justify-center items-center min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-500">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary-500 dark:border-orange-500 mx-auto mb-4"></div>
           <div className="text-xl text-gray-600 dark:text-gray-400 animate-pulse-soft">Loading vendors...</div>
@@ -33,11 +33,11 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-all duration-500">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-12 text-center animate-slide-up">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary-600 via-orange-600 to-red-600 dark:from-orange-400 dark:via-orange-500 dark:to-red-500 bg-clip-text text-transparent mb-4">
-            Welcome to SRMiggy
+          <h1 className="text-5xl md:text-6xl font-bold text-primary-600 dark:text-orange-400 mb-4">
+            Welcome to Slurp
           </h1>
           <p className="mt-4 text-2xl text-gray-600 dark:text-gray-400 font-medium">
             🍽️ Order delicious food from Java Canteen vendors
@@ -61,7 +61,7 @@ const Home = () => {
                   alt={vendor.name}
                   className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-3 right-3 bg-yellow-500 text-white px-3 py-1 rounded-full font-bold shadow-lg flex items-center space-x-1">
                   <span>★</span>
                   <span>{vendor.rating}</span>
@@ -76,7 +76,7 @@ const Home = () => {
                   <span className="text-primary-600 dark:text-orange-400 font-bold text-lg group-hover:scale-110 transition-transform">
                     View Menu →
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shadow-md">
+                  <div className="w-10 h-10 rounded-full bg-primary-500 dark:bg-orange-500 flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shadow-md">
                     <span className="text-white font-bold text-xl">→</span>
                   </div>
                 </div>

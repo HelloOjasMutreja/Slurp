@@ -136,12 +136,12 @@ const OrderSuccess = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-500 py-8 px-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-500 py-8 px-4">
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Success Message Card */}
         <div className="backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-dark-glass p-8 text-center border border-gray-200/50 dark:border-gray-700/50 animate-slide-up">
           <div className="mb-6">
-            <div className="mx-auto w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 rounded-full flex items-center justify-center shadow-lg animate-bounce-soft">
+            <div className="mx-auto w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center shadow-lg animate-bounce-soft">
               <svg
                 className="w-12 h-12 text-green-600 dark:text-green-400"
                 fill="none"
@@ -203,17 +203,17 @@ const OrderSuccess = () => {
 
           {/* Delivery Info */}
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 p-4 rounded-xl text-center border border-blue-200 dark:border-blue-700">
+            <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-200 dark:border-blue-700">
               <div className="text-3xl mb-2">⏱️</div>
               <p className="text-sm text-gray-600 dark:text-gray-400">ETA</p>
               <p className="text-xl font-bold text-blue-600 dark:text-blue-400">20 mins</p>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 p-4 rounded-xl text-center border border-green-200 dark:border-green-700">
+            <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-200 dark:border-green-700">
               <div className="text-3xl mb-2">📍</div>
               <p className="text-sm text-gray-600 dark:text-gray-400">Status</p>
               <p className="text-xl font-bold text-green-600 dark:text-green-400">In Transit</p>
             </div>
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30 p-4 rounded-xl text-center border border-orange-200 dark:border-orange-700">
+            <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-xl text-center border border-orange-200 dark:border-orange-700">
               <div className="text-3xl mb-2">🛵</div>
               <p className="text-sm text-gray-600 dark:text-gray-400">Rider</p>
               <p className="text-xl font-bold text-orange-600 dark:text-orange-400">On the way</p>
@@ -226,7 +226,7 @@ const OrderSuccess = () => {
           <div className="space-y-3">
             <button
               onClick={() => navigate(`/orders`)}
-              className="w-full bg-gradient-to-r from-primary-500 to-orange-600 dark:from-orange-500 dark:to-orange-700 text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+              className="w-full bg-primary-500 dark:bg-orange-500 text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
             >
               📦 View My Orders
             </button>
