@@ -17,6 +17,7 @@ import OrderFailed from './pages/OrderFailed';
 import Orders from './pages/Orders';
 import AdminDashboard from './pages/AdminDashboard';
 import Wallet from './pages/Wallet';
+import { CSS, Page } from './design-system';
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -39,8 +40,9 @@ function App() {
       <ThemeProvider>
         <AuthProvider>
           <CartProvider>
+            <CSS />
             {showWelcome && <Welcome onComplete={handleWelcomeComplete} />}
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300" style={{ visibility: showWelcome ? 'hidden' : 'visible' }}>
+            <Page s={{ visibility: showWelcome ? 'hidden' : 'visible' }}>
               <Navbar />
               <Routes>
                 <Route path="/login" element={<Login />} />
@@ -104,7 +106,7 @@ function App() {
                   }
                 />
               </Routes>
-            </div>
+            </Page>
           </CartProvider>
         </AuthProvider>
       </ThemeProvider>

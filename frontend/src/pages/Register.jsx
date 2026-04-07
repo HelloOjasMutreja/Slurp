@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { authAPI } from '../utils/api';
+import { useT, H, Inp, Btn, Alert, Card, Lbl } from '../design-system';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const tok = useT();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,87 +37,48 @@ const Register = () => {
     }
   };
 
+  const fields = [
+    { key: 'username', label: 'Username', type: 'text', placeholder: 'Choose a username' },
+    { key: 'email', label: 'Email', type: 'email', placeholder: 'Your email address' },
+    { key: 'password', label: 'Password', type: 'password', placeholder: 'Create a password' },
+    { key: 'fullName', label: 'Full Name', type: 'text', placeholder: 'Your full name' },
+    { key: 'phone', label: 'Phone', type: 'tel', placeholder: 'Phone number' },
+    { key: 'address', label: 'Address', type: 'text', placeholder: 'Hostel / campus address' },
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 transition-all duration-500">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-[#C94B1D] dark:text-[#F37843]">
-            Create your account
-          </h2>
-        </div>
-        <form className="mt-8 space-y-6 backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 p-8 rounded-2xl shadow-lg dark:shadow-dark-glass border border-gray-200/50 dark:border-gray-700/50" onSubmit={handleSubmit}>
-          {error && (
-            <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-400 px-4 py-3 rounded-xl">
-              {error}
-            </div>
-          )}
-          <div className="space-y-4">
-            <input
-              type="text"
-              required
-              className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C94B1D] focus:border-[#C94B1D] sm:text-sm transition-all duration-300"
-              placeholder="Username"
-              value={formData.username}
-              onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-            />
-            <input
-              type="email"
-              required
-              className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C94B1D] focus:border-[#C94B1D] sm:text-sm transition-all duration-300"
-              placeholder="Email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            />
-            <input
-              type="password"
-              required
-              className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C94B1D] focus:border-[#C94B1D] sm:text-sm transition-all duration-300"
-              placeholder="Password"
-              value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            />
-            <input
-              type="text"
-              required
-              className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C94B1D] focus:border-[#C94B1D] sm:text-sm transition-all duration-300"
-              placeholder="Full Name"
-              value={formData.fullName}
-              onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-            />
-            <input
-              type="tel"
-              required
-              className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C94B1D] focus:border-[#C94B1D] sm:text-sm transition-all duration-300"
-              placeholder="Phone"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            />
-            <input
-              type="text"
-              required
-              className="appearance-none relative block w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C94B1D] focus:border-[#C94B1D] sm:text-sm transition-all duration-300"
-              placeholder="Address"
-              value={formData.address}
-              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-            />
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-[#C94B1D] dark:bg-[#E85A25] hover:shadow-glow hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#C94B1D] disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300"
-            >
-              {loading ? 'Creating account...' : 'Register'}
-            </button>
-          </div>
-
-          <div className="text-center">
-            <Link to="/login" className="text-[#C94B1D] dark:text-[#F37843] hover:underline font-medium">
-              Already have an account? Login here
-            </Link>
-          </div>
-        </form>
+    <div style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '48px 16px' }}>
+      <div style={{ width: '100%', maxWidth: 440 }}>
+        <H l={1} s={{ textAlign: 'center', marginBottom: 8, color: tok.color.pri }}>Create your account</H>
+        <p style={{ textAlign: 'center', color: tok.color.textSec, fontFamily: tok.font.body, fontSize: 14, marginBottom: 32 }}>
+          Join Slurp — SRM's campus food delivery
+        </p>
+        <Card>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {error && <Alert v="err">{error}</Alert>}
+            {fields.map(({ key, label, type, placeholder }) => (
+              <div key={key} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <Lbl req>{label}</Lbl>
+                <Inp
+                  type={type}
+                  placeholder={placeholder}
+                  value={formData[key]}
+                  onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
+                  required
+                />
+              </div>
+            ))}
+            <Btn type="submit" loading={loading} full sz="lg">
+              Create Account
+            </Btn>
+            <p style={{ textAlign: 'center', fontFamily: tok.font.body, fontSize: 13, color: tok.color.textSec, margin: 0 }}>
+              Already have an account?{' '}
+              <Link to="/login" style={{ color: tok.color.pri, fontWeight: 600, textDecoration: 'none' }}>
+                Login here
+              </Link>
+            </p>
+          </form>
+        </Card>
       </div>
     </div>
   );

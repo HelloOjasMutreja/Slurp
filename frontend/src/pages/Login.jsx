@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { authAPI } from '../utils/api';
+import { useT, H, Inp, Btn, Alert, Card, Lbl } from '../design-system';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
@@ -9,6 +10,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const tok = useT();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,58 +30,45 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
-            Sign in to Slurp
-          </h2>
-        </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          {error && (
-            <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-400 px-4 py-3 rounded">
-              {error}
-            </div>
-          )}
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <input
-                type="text"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-800 rounded-t-md focus:outline-none focus:ring-[#C94B1D] focus:border-[#C94B1D] focus:z-10 sm:text-sm transition-colors"
-                placeholder="Username"
+    <div style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '48px 16px' }}>
+      <div style={{ width: '100%', maxWidth: 400 }}>
+        <H l={1} s={{ textAlign: 'center', marginBottom: 8 }}>Sign in to Slurp</H>
+        <p style={{ textAlign: 'center', color: tok.color.textSec, fontFamily: tok.font.body, fontSize: 14, marginBottom: 32 }}>
+          Welcome back — your campus food awaits
+        </p>
+        <Card>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            {error && <Alert v="err">{error}</Alert>}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <Lbl req>Username</Lbl>
+              <Inp
+                placeholder="Enter your username"
                 value={credentials.username}
                 onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+                required
               />
             </div>
-            <div>
-              <input
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <Lbl req>Password</Lbl>
+              <Inp
                 type="password"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-800 rounded-b-md focus:outline-none focus:ring-[#C94B1D] focus:border-[#C94B1D] focus:z-10 sm:text-sm transition-colors"
-                placeholder="Password"
+                placeholder="Enter your password"
                 value={credentials.password}
                 onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+                required
               />
             </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#C94B1D] dark:bg-[#E85A25] hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#C94B1D] disabled:opacity-50 transition-all"
-            >
-              {loading ? 'Signing in...' : 'Sign in'}
-            </button>
-          </div>
-
-          <div className="text-center">
-            <Link to="/register" className="text-[#C94B1D] dark:text-[#F37843] hover:underline">
-              Don't have an account? Register here
-            </Link>
-          </div>
-        </form>
+            <Btn type="submit" loading={loading} full sz="lg">
+              Sign in
+            </Btn>
+            <p style={{ textAlign: 'center', fontFamily: tok.font.body, fontSize: 13, color: tok.color.textSec, margin: 0 }}>
+              Don't have an account?{' '}
+              <Link to="/register" style={{ color: tok.color.pri, fontWeight: 600, textDecoration: 'none' }}>
+                Register here
+              </Link>
+            </p>
+          </form>
+        </Card>
       </div>
     </div>
   );
