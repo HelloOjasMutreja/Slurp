@@ -61,7 +61,7 @@ const OrderSuccess = () => {
     // Add hostel destination marker
     const hostelIcon = window.L.divIcon({
       className: 'custom-div-icon',
-      html: "<div style='background-color:#22c55e;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3);'>🏠</div>",
+      html: "<div style='background-color:#22c55e;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3);font-size:14px;font-weight:bold;color:white;'>H</div>",
       iconSize: [30, 30],
       iconAnchor: [15, 15]
     });
@@ -163,11 +163,11 @@ const OrderSuccess = () => {
           </h1>
           {message && (
             <div className="mb-3 text-green-600 dark:text-green-400 font-semibold text-base">
-              ✅ {message}
+              {message}
             </div>
           )}
           <p className="text-gray-600 dark:text-gray-400 mb-4 text-lg">
-            Your order <span className="font-bold text-primary-600 dark:text-orange-400">#{orderId}</span> has been confirmed!
+            Your order <span className="font-bold text-[#C94B1D] dark:text-[#F37843]">#{orderId}</span> has been confirmed!
           </p>
           <p className="text-gray-500 dark:text-gray-400 text-sm">
             {getPaymentMessage()}
@@ -178,10 +178,10 @@ const OrderSuccess = () => {
         <div className="backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-dark-glass p-6 border border-gray-200/50 dark:border-gray-700/50 animate-fade-in">
           <div className="mb-4">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center justify-center">
-              <span className="mr-2">🚚</span> Live Delivery Tracking
+              Live Delivery Tracking
             </h2>
             <p className="text-center text-green-600 dark:text-green-400 font-semibold mt-2 text-lg animate-pulse">
-              🛵 Your order is on the way — arriving in 20 minutes
+              Your order is on the way — arriving in 20 minutes
             </p>
           </div>
           
@@ -194,7 +194,7 @@ const OrderSuccess = () => {
             {!mapLoaded && (
               <div className="w-full h-full flex items-center justify-center">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-primary-500 dark:border-orange-500 mx-auto mb-4"></div>
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-[#C94B1D] dark:border-[#F37843] mx-auto mb-4"></div>
                   <p className="text-gray-600 dark:text-gray-400">Loading map...</p>
                 </div>
               </div>
@@ -204,19 +204,19 @@ const OrderSuccess = () => {
           {/* Delivery Info */}
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-200 dark:border-blue-700">
-              <div className="text-3xl mb-2">⏱️</div>
+              <div className="text-3xl mb-2 flex justify-center">⏱</div>
               <p className="text-sm text-gray-600 dark:text-gray-400">ETA</p>
               <p className="text-xl font-bold text-blue-600 dark:text-blue-400">20 mins</p>
             </div>
             <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-200 dark:border-green-700">
-              <div className="text-3xl mb-2">📍</div>
+              <div className="text-3xl mb-2 flex justify-center text-green-600 dark:text-green-400 font-bold text-lg">📍</div>
               <p className="text-sm text-gray-600 dark:text-gray-400">Status</p>
               <p className="text-xl font-bold text-green-600 dark:text-green-400">In Transit</p>
             </div>
             <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-xl text-center border border-orange-200 dark:border-orange-700">
-              <div className="text-3xl mb-2">🛵</div>
+              <div className="text-3xl mb-2 flex justify-center">🛵</div>
               <p className="text-sm text-gray-600 dark:text-gray-400">Rider</p>
-              <p className="text-xl font-bold text-orange-600 dark:text-orange-400">On the way</p>
+              <p className="text-xl font-bold text-[#C94B1D] dark:text-[#F37843]">On the way</p>
             </div>
           </div>
         </div>
@@ -226,15 +226,15 @@ const OrderSuccess = () => {
           <div className="space-y-3">
             <button
               onClick={() => navigate(`/orders`)}
-              className="w-full bg-primary-500 dark:bg-orange-500 text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+              className="w-full bg-[#C94B1D] dark:bg-[#E85A25] text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
             >
-              📦 View My Orders
+              View My Orders
             </button>
             <button
               onClick={() => navigate('/')}
               className="w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-3 rounded-xl hover:bg-gray-300 dark:hover:bg-gray-600 hover:scale-105 transition-all duration-300 font-semibold"
             >
-              🏠 Back to Home
+              Back to Home
             </button>
           </div>
         </div>

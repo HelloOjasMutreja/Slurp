@@ -44,7 +44,7 @@ const AdminDashboard = () => {
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-500">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary-500 dark:border-orange-500 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#C94B1D] dark:border-[#F37843] mx-auto mb-4"></div>
           <div className="text-xl text-gray-600 dark:text-gray-400 animate-pulse-soft">Loading dashboard...</div>
         </div>
       </div>
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-primary-600 dark:text-orange-400 mb-8 animate-slide-up">🛠️ Admin Dashboard</h1>
+        <h1 className="text-4xl font-bold text-[#C94B1D] dark:text-[#F37843] mb-8 animate-slide-up">Admin Dashboard</h1>
 
         {/* Tabs */}
         <div className="mb-6 border-b border-gray-200 dark:border-gray-700">
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
                 onClick={() => setActiveTab(tab)}
                 className={`py-4 px-1 border-b-2 font-semibold text-sm transition-all duration-300 ${
                   activeTab === tab
-                    ? 'border-primary-500 dark:border-orange-500 text-primary-600 dark:text-orange-400'
+                    ? 'border-[#C94B1D] dark:border-[#F37843] text-[#C94B1D] dark:text-[#F37843]'
                     : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
                 }`}
               >
@@ -92,7 +92,7 @@ const AdminDashboard = () => {
             </div>
             <div className="backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-dark-glass p-6 border border-gray-200/50 dark:border-gray-700/50 hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: '300ms' }}>
               <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium">Total Revenue</h3>
-              <p className="text-3xl font-bold text-primary-600 dark:text-orange-400 mt-2">
+              <p className="text-3xl font-bold text-[#C94B1D] dark:text-[#F37843] mt-2">
                 ₹{stats.totalRevenue.toFixed(2)}
               </p>
             </div>
@@ -182,7 +182,7 @@ const AdminDashboard = () => {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{vendor.name}</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">{vendor.description}</p>
                 <div className="mt-3 flex items-center justify-between">
-                  <span className="text-yellow-500 dark:text-yellow-400 font-bold">★ {vendor.rating}</span>
+                  <span className="flex items-center gap-1 text-yellow-500 dark:text-yellow-400 font-bold"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg> {vendor.rating}</span>
                   <span
                     className={`px-3 py-1 text-xs font-semibold rounded-full ${
                       vendor.active

@@ -20,7 +20,7 @@ const Welcome = ({ onComplete }) => {
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-primary overflow-hidden" style={{ zIndex: 9999 }}>
+    <div className="fixed inset-0 flex items-center justify-center bg-[#C94B1D] overflow-hidden" style={{ zIndex: 9999 }}>
       {/* Animated background circles */}
       <div className="absolute w-96 h-96 bg-white/10 rounded-full -top-20 -left-20 animate-[ping_3s_ease-in-out_infinite]"></div>
       <div className="absolute w-64 h-64 bg-white/10 rounded-full -bottom-10 -right-10 animate-[ping_4s_ease-in-out_infinite]"></div>
@@ -40,7 +40,7 @@ const Welcome = ({ onComplete }) => {
         {/* Subtitle with fade and slide animation */}
         <div className="relative">
           <p className="text-2xl md:text-4xl font-bold text-white/90 animate-[slideInUp_1.5s_ease-out] tracking-wide">
-            Only for <span className="text-yellow-300 animate-[pulse_2s_ease-in-out_infinite]">SRM</span>
+            Only for <span className="text-[#F5B927] animate-[pulse_2s_ease-in-out_infinite]">SRM</span>
           </p>
           
           {/* Decorative line */}

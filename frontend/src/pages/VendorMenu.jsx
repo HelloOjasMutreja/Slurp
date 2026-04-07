@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { vendorAPI, menuAPI } from '../utils/api';
 import { useCart } from '../context/CartContext';
+import { Icon } from '../design-system';
 
 const VendorMenu = () => {
   const { id } = useParams();
@@ -48,7 +49,7 @@ const VendorMenu = () => {
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-500">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary-500 dark:border-orange-500 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#C94B1D] dark:border-[#F37843] mx-auto mb-4"></div>
           <div className="text-xl text-gray-600 dark:text-gray-400 animate-pulse-soft">Loading menu...</div>
         </div>
       </div>
@@ -66,12 +67,12 @@ const VendorMenu = () => {
               className="w-36 h-36 object-cover rounded-2xl shadow-xl ring-4 ring-white dark:ring-gray-700 hover:scale-105 transition-transform duration-300"
             />
             <div className="flex-1">
-              <h1 className="text-4xl font-bold text-primary-600 dark:text-orange-400 mb-2">
+              <h1 className="text-4xl font-bold text-[#C94B1D] dark:text-[#F37843] mb-2">
                 {vendor.name}
               </h1>
               <p className="mt-2 text-gray-600 dark:text-gray-400 text-lg">{vendor.description}</p>
               <div className="mt-3 flex items-center bg-yellow-50 dark:bg-yellow-900/20 px-3 py-1 rounded-full w-fit">
-                <span className="text-yellow-500 text-xl">★</span>
+                <Icon name="star" size={16} color="#F5B927"/>
                 <span className="ml-1 text-gray-900 dark:text-gray-100 font-semibold">{vendor.rating}</span>
               </div>
             </div>
@@ -89,7 +90,7 @@ const VendorMenu = () => {
               onClick={() => setFilterType('all')}
               className={`px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 ${
                 filterType === 'all'
-                  ? 'bg-primary-500 text-white shadow-lg scale-105'
+                  ? 'bg-[#C94B1D] text-white shadow-lg scale-105'
                   : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-gray-700/50'
               }`}
             >
@@ -103,7 +104,7 @@ const VendorMenu = () => {
                   : 'text-gray-600 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30'
               }`}
             >
-              <span className="text-lg">🟢</span>
+              <span className="w-3 h-3 rounded-full bg-green-500 inline-block border border-green-700"></span>
               <span>Veg</span>
             </button>
             <button
@@ -114,16 +115,15 @@ const VendorMenu = () => {
                   : 'text-gray-600 dark:text-gray-300 hover:text-red-700 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30'
               }`}
             >
-              <span className="text-lg">🔴</span>
+              <span className="w-3 h-3 rounded-full bg-red-500 inline-block border border-red-700"></span>
               <span>Non-Veg</span>
             </button>
           </div>
         </div>
         
-        {/* Items count indicator with animation */}
-        {filterType !== 'all' && (
+          {filterType !== 'all' && (
           <div className="mb-6 text-sm text-gray-600 dark:text-gray-400 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-lg inline-block animate-slide-down">
-            Showing <span className="font-bold text-primary-600 dark:text-orange-400">{filteredMenuItems.length}</span> {filterType === 'veg' ? 'vegetarian' : 'non-vegetarian'} {filteredMenuItems.length === 1 ? 'item' : 'items'}
+            Showing <span className="font-bold text-[#C94B1D] dark:text-[#F37843]">{filteredMenuItems.length}</span> {filterType === 'veg' ? 'vegetarian' : 'non-vegetarian'} {filteredMenuItems.length === 1 ? 'item' : 'items'}
           </div>
         )}
         
@@ -143,30 +143,30 @@ const VendorMenu = () => {
                 />
                 <div className="absolute top-3 right-3">
                   {item.isVeg ? (
-                    <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-bounce-soft">
-                      🟢 VEG
+                    <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-bounce-soft flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-white inline-block"></span> VEG
                     </span>
                   ) : (
-                    <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-bounce-soft">
-                      🔴 NON-VEG
+                    <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-bounce-soft flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-white inline-block"></span> NON-VEG
                     </span>
                   )}
                 </div>
               </div>
               <div className="p-5">
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#C94B1D] dark:group-hover:text-[#F37843] transition-colors">
                     {item.name}
                   </h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">{item.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-primary-600 dark:text-orange-400">
+                  <span className="text-2xl font-bold text-[#C94B1D] dark:text-[#F37843]">
                     ₹{item.price}
                   </span>
                   <button
                     onClick={() => handleAddToCart(item)}
-                    className="bg-primary-500 dark:bg-orange-500 text-white px-6 py-2.5 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+                    className="bg-[#C94B1D] dark:bg-[#E85A25] text-white px-6 py-2.5 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
                   >
                     Add to Cart
                   </button>
@@ -178,7 +178,7 @@ const VendorMenu = () => {
         
         {filteredMenuItems.length === 0 && (
           <div className="text-center py-16 animate-fade-in">
-            <div className="text-6xl mb-4">🍽️</div>
+            <div className="flex justify-center mb-4"><Icon name="utensils" size={48} color="#C8C1B8"/></div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">No items found</h3>
             <p className="text-gray-600 dark:text-gray-400">Try selecting a different filter</p>
           </div>

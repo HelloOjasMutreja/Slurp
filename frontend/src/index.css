@@ -1,10 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @import "tailwindcss";
 
 @variant dark (.dark &);
 
 @theme {
-  --color-primary: #FF5722;
-  --color-secondary: #FFC107;
+  --color-primary: #C94B1D;
+  --color-primary-50: #FEF4EF;
+  --color-primary-100: #FDE5D8;
+  --color-primary-200: #FACAAF;
+  --color-primary-400: #F37843;
+  --color-primary-500: #E85A25;
+  --color-primary-600: #C94B1D;
+  --color-primary-700: #A33C16;
+  --color-secondary: #E8A314;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 }
 
 /* Custom animations for Welcome page */

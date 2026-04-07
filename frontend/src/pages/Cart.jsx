@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useState, useEffect } from 'react';
 import { walletAPI } from '../utils/api';
+import { Icon } from '../design-system';
 
 const Cart = () => {
   const { cart, updateQuantity, removeFromCart, getTotal, clearCart } = useCart();
@@ -45,12 +46,12 @@ const Cart = () => {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center transition-all duration-500">
         <div className="text-center animate-fade-in">
-          <div className="mb-6 text-6xl animate-bounce-soft">🛒</div>
+          <div className="mb-6 flex justify-center animate-bounce-soft"><Icon name="shoppingCart" size={48} color="#C8C1B8"/></div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Your cart is empty</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">Start adding delicious items!</p>
           <button
             onClick={() => navigate('/')}
-            className="bg-primary-500 dark:bg-orange-500 text-white px-8 py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+            className="bg-[#C94B1D] dark:bg-[#E85A25] text-white px-8 py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
           >
             Browse Vendors
           </button>
@@ -64,7 +65,7 @@ const Cart = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="backdrop-blur-lg bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-glass dark:shadow-dark-glass p-6 border border-gray-200/50 dark:border-gray-700/50 animate-slide-up">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold text-primary-600 dark:text-orange-400">
+            <h1 className="text-3xl font-bold text-[#C94B1D] dark:text-[#F37843]">
               Your Cart
             </h1>
             <button
@@ -89,7 +90,7 @@ const Cart = () => {
                 />
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.name}</h3>
-                  <p className="text-primary-600 dark:text-orange-400 font-semibold">₹{item.price}</p>
+                  <p className="text-[#C94B1D] dark:text-[#F37843] font-semibold">₹{item.price}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <button
@@ -101,7 +102,7 @@ const Cart = () => {
                   <span className="w-10 text-center text-gray-900 dark:text-white font-semibold text-lg">{item.quantity}</span>
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    className="w-10 h-10 rounded-full bg-primary-500 dark:bg-orange-500 hover:bg-primary-600 dark:hover:bg-orange-600 text-white transition-all duration-300 font-bold hover:scale-110 shadow-md hover:shadow-glow"
+                    className="w-10 h-10 rounded-full bg-[#C94B1D] dark:bg-[#E85A25] hover:bg-[#b84219] dark:hover:bg-[#d45220] text-white transition-all duration-300 font-bold hover:scale-110 shadow-md hover:shadow-glow"
                   >
                     +
                   </button>
@@ -136,19 +137,19 @@ const Cart = () => {
             </div>
             {loyaltyDiscount > 0 && (
               <div className="flex justify-between text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 p-2 rounded-lg animate-slide-down">
-                <span className="font-medium">🎉 Loyalty Discount</span>
+                <span className="font-medium">Loyalty Discount</span>
                 <span className="font-bold">-₹{loyaltyDiscount.toFixed(2)}</span>
               </div>
             )}
             <div className="flex justify-between text-2xl font-bold text-gray-900 dark:text-white pt-3 border-t dark:border-gray-600">
               <span>Total</span>
-              <span className="text-primary-600 dark:text-orange-400">
+              <span className="text-[#C94B1D] dark:text-[#F37843]">
                 ₹{total.toFixed(2)}
               </span>
             </div>
             {subtotal < 100 && (
               <div className="text-red-600 dark:text-red-400 text-sm bg-red-50 dark:bg-red-900/20 p-3 rounded-lg animate-pulse-soft">
-                💡 Add ₹{(100 - subtotal).toFixed(2)} more to avoid delivery fee!
+                Add ₹{(100 - subtotal).toFixed(2)} more to avoid delivery fee!
               </div>
             )}
           </div>
@@ -157,7 +158,6 @@ const Cart = () => {
           <div className="border-t dark:border-gray-700 mt-6 pt-6">
             <div className="bg-blue-50 dark:bg-blue-900/30 rounded-2xl p-5 mb-4 shadow-lg backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 animate-slide-up">
               <div className="flex items-center mb-3">
-                <span className="text-3xl mr-3 animate-bounce-soft">🏫</span>
                 <h3 className="font-bold text-xl text-blue-600 dark:text-blue-400">
                   Campus Loyalty Program
                 </h3>
@@ -174,7 +174,7 @@ const Cart = () => {
                   <span className="font-bold text-lg text-green-600 dark:text-green-400">+{pointsToEarn.toFixed(1)} pts</span>
                 </div>
                 <p className="text-xs text-gray-600 dark:text-gray-400 mt-3 bg-white/30 dark:bg-gray-800/30 p-2 rounded-lg">
-                  ✨ Earn 0.5 points for every ₹100 spent • 1 point = ₹1 discount
+                  Earn 0.5 points for every ₹100 spent • 1 point = ₹1 discount
                 </p>
               </div>
             </div>
@@ -216,9 +216,9 @@ const Cart = () => {
 
           <button
             onClick={handleCheckout}
-            className="w-full mt-6 bg-primary-500 dark:bg-orange-500 text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300 font-bold text-lg"
+            className="w-full mt-6 bg-[#C94B1D] dark:bg-[#E85A25] text-white py-4 rounded-xl hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300 font-bold text-lg"
           >
-            Proceed to Checkout →
+            Proceed to Checkout <Icon name="arrowR" size={18} color="#fff" style={{display:'inline',verticalAlign:'middle'}}/>
           </button>
         </div>
       </div>

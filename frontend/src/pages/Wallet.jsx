@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { walletAPI } from '../utils/api';
+import { Icon } from '../design-system';
 
 const Wallet = () => {
   const [balance, setBalance] = useState(0);
@@ -63,23 +64,23 @@ const Wallet = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-all duration-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 animate-slide-up">💰 My Wallet</h1>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 animate-slide-up">My Wallet</h1>
 
         {/* Balance Card */}
-        <div className="bg-primary-500 dark:bg-orange-500 rounded-2xl shadow-lg dark:shadow-dark-glass p-8 mb-8 text-white animate-fade-in border border-purple-200/50 dark:border-purple-700/50">
+        <div className="bg-[#C94B1D] dark:bg-[#E85A25] rounded-2xl shadow-lg dark:shadow-dark-glass p-8 mb-8 text-white animate-fade-in border border-purple-200/50 dark:border-purple-700/50">
           <div className="flex justify-between items-center">
             <div>
               <p className="text-sm opacity-90 mb-2">Available Balance</p>
               <p className="text-4xl font-bold">₹{balance.toFixed(2)}</p>
             </div>
-            <div className="text-6xl opacity-30">💰</div>
+            <div className="opacity-30"><Icon name="wallet" size={48} color="rgba(255,255,255,0.3)"/></div>
           </div>
         </div>
 
         {/* Add Money Section */}
         <div className="backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-dark-glass p-6 mb-8 border border-gray-200/50 dark:border-gray-700/50 animate-slide-up transition-all duration-300">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-            <span className="mr-2">💵</span> Add Money
+            <span className="mr-2"><Icon name="wallet" size={18}/></span> Add Money
           </h2>
           
           {error && (
@@ -103,14 +104,14 @@ const Wallet = () => {
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 placeholder="Enter amount"
-                className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+                className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C94B1D] focus:border-[#C94B1D] bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
                 required
               />
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="bg-primary-500 dark:bg-orange-500 text-white px-6 py-3 rounded-xl hover:shadow-glow hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 font-semibold"
+              className="bg-[#C94B1D] dark:bg-[#E85A25] text-white px-6 py-3 rounded-xl hover:shadow-glow hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 font-semibold"
             >
               {loading ? 'Processing...' : 'Add Money'}
             </button>
@@ -147,8 +148,8 @@ const Wallet = () => {
 
         {/* Transaction History */}
         <div className="backdrop-blur-lg bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-lg dark:shadow-dark-glass p-6 border border-gray-200/50 dark:border-gray-700/50 animate-slide-up transition-all duration-300">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-            <span className="mr-2">📋</span> Transaction History
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Transaction History
           </h2>
           
           {transactions.length === 0 ? (
