@@ -4,6 +4,7 @@ import { useCart } from '../context/CartContext';
 import { useTheme } from '../context/ThemeContext';
 import { useState, useEffect } from 'react';
 import { walletAPI } from '../utils/api';
+import { Icon } from '../design-system';
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -31,7 +32,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center group">
-            <span className="text-3xl font-bold text-primary-600 dark:text-orange-400 group-hover:scale-105 transition-transform duration-300">
+            <span className="text-3xl font-bold text-[#C94B1D] dark:text-[#F37843] group-hover:scale-105 transition-transform duration-300">
               Slurp
             </span>
           </Link>
@@ -45,9 +46,9 @@ const Navbar = () => {
             >
               <div className="relative">
                 {isDark ? (
-                  <span className="text-2xl group-hover:rotate-45 transition-transform duration-300 inline-block">☀️</span>
+                  <span className="group-hover:rotate-45 transition-transform duration-300 inline-block text-gray-700 dark:text-gray-200"><Icon name="sun" size={22}/></span>
                 ) : (
-                  <span className="text-2xl group-hover:-rotate-12 transition-transform duration-300 inline-block">🌙</span>
+                  <span className="group-hover:-rotate-12 transition-transform duration-300 inline-block text-gray-700 dark:text-gray-200"><Icon name="moon" size={22}/></span>
                 )}
               </div>
             </button>
@@ -56,47 +57,47 @@ const Navbar = () => {
               <>
                 <Link 
                   to="/" 
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-orange-400 transition-all duration-300 font-semibold hover:scale-105"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#C94B1D] dark:hover:text-[#F37843] transition-all duration-300 font-semibold hover:scale-105"
                 >
                   Home
                 </Link>
                 <Link 
                   to="/wallet" 
-                  className="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-orange-400 transition-all duration-300 font-semibold bg-green-50 dark:bg-green-900/20 px-3 py-2 rounded-lg hover:scale-105 hover:shadow-md"
+                  className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-[#C94B1D] dark:hover:text-[#F37843] transition-all duration-300 font-semibold bg-green-50 dark:bg-green-900/20 px-3 py-2 rounded-lg hover:scale-105 hover:shadow-md"
                 >
-                  <span className="mr-1 text-lg">💰</span>
+                  <Icon name="wallet" size={16}/>
                   <span className="font-bold">₹{walletBalance.toFixed(2)}</span>
                 </Link>
                 <Link 
                   to="/orders" 
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-orange-400 transition-all duration-300 font-semibold hover:scale-105"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#C94B1D] dark:hover:text-[#F37843] transition-all duration-300 font-semibold hover:scale-105"
                 >
                   My Orders
                 </Link>
                 {user?.role === 'ADMIN' && (
                   <Link 
                     to="/admin" 
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-orange-400 transition-all duration-300 font-semibold hover:scale-105 bg-purple-50 dark:bg-purple-900/20 px-3 py-2 rounded-lg"
+                    className="text-gray-700 dark:text-gray-300 hover:text-[#C94B1D] dark:hover:text-[#F37843] transition-all duration-300 font-semibold hover:scale-105 bg-purple-50 dark:bg-purple-900/20 px-3 py-2 rounded-lg"
                   >
                     Admin
                   </Link>
                 )}
                 <Link 
                   to="/cart" 
-                  className="relative text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-orange-400 transition-all duration-300 font-semibold hover:scale-105"
+                  className="relative text-gray-700 dark:text-gray-300 hover:text-[#C94B1D] dark:hover:text-[#F37843] transition-all duration-300 font-semibold hover:scale-105"
                 >
                   Cart
                   {getItemCount() > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-primary-500 dark:bg-orange-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg animate-bounce-soft">
+                    <span className="absolute -top-2 -right-2 bg-[#C94B1D] dark:bg-[#E85A25] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg animate-bounce-soft">
                       {getItemCount()}
                     </span>
                   )}
                 </Link>
                 <div className="flex items-center space-x-3 bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-xl">
-                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">👤 {user?.username}</span>
+                  <span className="flex items-center gap-1 text-sm font-semibold text-gray-700 dark:text-gray-300"><Icon name="user" size={15}/> {user?.username}</span>
                   <button
                     onClick={logout}
-                    className="bg-primary-500 dark:bg-orange-500 text-white px-4 py-2 rounded-lg hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+                    className="bg-[#C94B1D] dark:bg-[#E85A25] text-white px-4 py-2 rounded-lg hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
                   >
                     Logout
                   </button>
@@ -106,13 +107,13 @@ const Navbar = () => {
               <>
                 <Link 
                   to="/login" 
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-orange-400 transition-all duration-300 font-semibold hover:scale-105"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#C94B1D] dark:hover:text-[#F37843] transition-all duration-300 font-semibold hover:scale-105"
                 >
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-primary-500 dark:bg-orange-500 text-white px-6 py-2 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+                  className="bg-[#C94B1D] dark:bg-[#E85A25] text-white px-6 py-2 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
                 >
                   Register
                 </Link>

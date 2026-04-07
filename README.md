@@ -1,44 +1,15 @@
-# Slurp - Campus Food Delivery Platform
+# Slurp — Campus Food Delivery Platform
 
 [![Build and Test](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/build.yml/badge.svg)](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/build.yml)
 [![Deploy to GitHub Pages](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/deploy.yml/badge.svg)](https://github.com/HelloOjasMutreja/Slurp/actions/workflows/deploy.yml)
 
-🌐 **Live demo:** https://helloojasmutreja.github.io/Slurp/
+**Live demo:** https://helloojasmutreja.github.io/Slurp/
 
-Slurp is a full-stack food delivery website designed for SRM students to order food online from Java Canteen vendors and get it delivered to their doorstep.
-
-## 🚀 Quick Start (Run Locally)
-
-### Prerequisites
-
-Make sure you have the following installed:
-- **Java 17+** — [Download from adoptium.net](https://adoptium.net/)
-- **Maven 3.6+** — Typically included with Java; verify with `mvn -v`
-- **Node.js 18+ and npm** — [Download from nodejs.org](https://nodejs.org/)
+Slurp is a food delivery platform for SRM students to order from Java Canteen vendors. The frontend runs entirely in **mock mode** using `localStorage` — no backend or database is required to use the app.
 
 ---
 
-### Step 1 — Start the Backend
-
-```bash
-cd backend
-mvn spring-boot:run
-```
-
-The backend starts at **http://localhost:8080**
-
-> Tables and seed data are automatically created on startup — no manual SQL needed.
-
-**H2 Database Console (dev only):** http://localhost:8080/h2-console  
-- JDBC URL: `jdbc:h2:mem:testdb`  
-- Username: `sa`  
-- Password: *(leave empty)*
-
----
-
-### Step 2 — Start the Frontend
-
-In a separate terminal:
+## Quick Start (no backend needed)
 
 ```bash
 cd frontend
@@ -48,134 +19,189 @@ npm run dev
 
 The app opens at **http://localhost:5173**
 
----
-
-### Step 3 — Log In
-
-| Role     | Username   | Password   |
-|----------|------------|------------|
-| Customer | `customer` | `password` |
-| Admin    | `admin`    | `password` |
-| Vendor   | `vendor1`  | `password` |
+That's it. All data is stored in your browser's `localStorage`.
 
 ---
 
-## 🌐 GitHub Pages Deployment
+## Test Credentials
 
-The frontend is automatically deployed to **https://helloojasmutreja.github.io/Slurp/** on every push to `main` via the `deploy.yml` workflow.
+### Admin account (pre-seeded)
 
-### One-time setup (do this once in the repo settings)
+| Field    | Value              |
+|----------|--------------------|
+| Username | `admin`            |
+| Password | `admin123`         |
+| Email    | `admin@slurp.app`  |
+| Role     | `ADMIN`            |
 
-1. Go to **Settings → Pages** and set Source to **GitHub Actions**.
-2. *(Optional)* Go to **Settings → Variables → Actions** and add a repository variable:
-   - Name: `VITE_API_URL`
-   - Value: URL of your deployed backend, e.g. `https://your-backend.onrender.com/api`
-   
-   If this variable is not set, the frontend will try to call `http://localhost:8080/api` (works only for local testing).
+The admin account has access to the Admin Dashboard at `/admin`.
 
-> **Note:** The backend is a Spring Boot server and cannot run on GitHub Pages. Deploy it separately (Render, Railway, Fly.io, etc.) and point `VITE_API_URL` at it.
+### Customer accounts
 
----
+No customer accounts are pre-seeded. Use the **Register** page to create one — pick any username, email, and password. Every new customer account starts with:
 
-## 🎯 Features
-
-- **User Authentication** — JWT-based login with roles: Customer, Vendor, Admin, Rider
-- **Vendor Browsing** — Browse available food vendors with ratings and descriptions
-- **Shopping Cart** — Add items, adjust quantities, and review your order
-- **Smart Pricing** — ₹10 delivery fee for orders under ₹100; ₹2 platform fee always applied
-- **Payment Options** — Wallet balance or mock card/UPI payment; Cash on Delivery
-- **Digital Wallet** — Add funds and pay directly from your wallet
-- **Loyalty Points** — Earn 0.5 pts per ₹100 spent; redeem 1 pt = ₹1 off
-- **Time-Gated Ordering** — Orders accepted 11 AM – 7 PM only
-- **Order Tracking** — Live delivery map with animated rider movement
-- **Admin Dashboard** — View platform stats, manage orders and vendors
-- **Dark Mode** — Full dark/light theme toggle
+- Wallet balance: **₹100**
+- Loyalty points: **0**
 
 ---
 
-## 🏗️ Tech Stack
+## Seed Data Reference
 
-| Layer     | Technology                          |
-|-----------|-------------------------------------|
-| Backend   | Java 17, Spring Boot 3.2, Spring Security (JWT), Spring Data JPA |
-| Database  | H2 (dev) / PostgreSQL via Supabase (prod) |
-| Build     | Maven                               |
-| Frontend  | React 18, React Router, Axios       |
-| Styling   | Tailwind CSS v4                     |
-| Dev Build | Vite                                |
+All of the following data is loaded from `frontend/src/utils/mockData.js` and served by the `localStorage` mock in `frontend/src/utils/api.js`. This is what you'll see in the app on first load.
+
+### Vendors
+
+| ID   | Name              | Rating | Description |
+|------|-------------------|--------|-------------|
+| `v1` | Spice Garden      | 4.5    | Authentic Indian cuisine with vegetarian and non-vegetarian options |
+| `v2` | The Burger Joint  | 4.3    | Juicy burgers, crispy fries, and refreshing shakes |
+| `v3` | Wok & Roll        | 4.1    | Pan-Asian dishes: Chinese, Thai, and Japanese inspired |
+| `v4` | Pizza Palace      | 4.4    | Wood-fired pizzas with fresh toppings and homemade sauces |
+
+### Menu Items
+
+#### Spice Garden (`v1`)
+
+| ID    | Item                | Price  | Veg? |
+|-------|---------------------|--------|------|
+| `m1`  | Paneer Butter Masala | ₹120  | Yes  |
+| `m2`  | Dal Tadka           | ₹80    | Yes  |
+| `m3`  | Chicken Biryani     | ₹160   | No   |
+| `m4`  | Veg Thali           | ₹100   | Yes  |
+| `m5`  | Mutton Rogan Josh   | ₹200   | No   |
+
+#### The Burger Joint (`v2`)
+
+| ID    | Item                  | Price  | Veg? |
+|-------|-----------------------|--------|------|
+| `m6`  | Classic Cheese Burger | ₹150   | No   |
+| `m7`  | Veggie Delight Burger | ₹120   | Yes  |
+| `m8`  | Crispy Chicken Burger | ₹160   | No   |
+| `m9`  | Loaded Fries          | ₹90    | Yes  |
+| `m10` | Chocolate Shake       | ₹80    | Yes  |
+
+#### Wok & Roll (`v3`)
+
+| ID    | Item                  | Price  | Veg? |
+|-------|-----------------------|--------|------|
+| `m11` | Veg Fried Rice        | ₹100   | Yes  |
+| `m12` | Chicken Noodles       | ₹130   | No   |
+| `m13` | Spring Rolls (4 pcs)  | ₹80    | Yes  |
+| `m14` | Thai Green Curry      | ₹140   | Yes  |
+| `m15` | Kung Pao Chicken      | ₹160   | No   |
+
+#### Pizza Palace (`v4`)
+
+| ID    | Item                  | Price  | Veg? |
+|-------|-----------------------|--------|------|
+| `m16` | Margherita Pizza      | ₹180   | Yes  |
+| `m17` | Pepperoni Pizza       | ₹220   | No   |
+| `m18` | BBQ Chicken Pizza     | ₹240   | No   |
+| `m19` | Veggie Supreme Pizza  | ₹200   | Yes  |
+| `m20` | Garlic Bread (6 pcs)  | ₹80    | Yes  |
+
+### Delivery Slots
+
+| ID   | Display Name          | Start | End   |
+|------|-----------------------|-------|-------|
+| `s1` | 11:00 AM – 12:00 PM  | 11:00 | 12:00 |
+| `s2` | 12:00 PM – 1:00 PM   | 12:00 | 13:00 |
+| `s3` | 1:00 PM – 2:00 PM    | 13:00 | 14:00 |
+| `s4` | 5:00 PM – 6:00 PM    | 17:00 | 18:00 |
+| `s5` | 6:00 PM – 7:00 PM    | 18:00 | 19:00 |
 
 ---
 
-## 📁 Project Structure
+## Pricing & Wallet Rules
+
+| Rule                   | Value                                       |
+|------------------------|---------------------------------------------|
+| Platform fee           | ₹2 on every order                           |
+| Delivery fee           | ₹10 if order subtotal < ₹100; free otherwise |
+| Starting wallet balance | ₹100 for every new account                 |
+| Loyalty points earned  | `subtotal × 0.005` pts per order            |
+| Loyalty redemption     | 1 pt = ₹1 off; capped at the order total    |
+
+### Payment methods available at checkout
+
+| Method    | How it works in mock mode |
+|-----------|---------------------------|
+| Wallet    | Deducted immediately from `localStorage` wallet; order is confirmed |
+| Card / UPI | Mock payment flow — always succeeds; loyalty points awarded on verification |
+| Cash on Delivery | No deduction; loyalty points awarded on COD confirmation |
+
+---
+
+## localStorage Keys
+
+The mock API stores everything in the following keys (visible in DevTools → Application → Local Storage):
+
+| Key                         | Contents                                     |
+|-----------------------------|----------------------------------------------|
+| `slurp_users`               | Array of all registered users (including passwords) |
+| `slurp_orders`              | Array of all placed orders                   |
+| `slurp_wallet_<userId>`     | `{ balance, loyaltyPoints, transactions[] }` for each user |
+| `user`                      | Currently logged-in user object              |
+| `token`                     | Mock auth token for the current session      |
+
+To reset all data to its initial state, open DevTools and clear `localStorage`, then reload the page.
+
+---
+
+## Features
+
+- **Authentication** — Register / login with role-based access (Customer, Admin)
+- **Vendor Browsing** — Browse 4 active vendors with ratings and descriptions
+- **Menu Filtering** — Filter items by Veg / Non-Veg
+- **Shopping Cart** — Add items across one vendor, adjust quantities
+- **Smart Pricing** — Automatic delivery fee and platform fee at checkout
+- **Delivery Slot Selection** — Choose from 5 pre-set time slots
+- **Digital Wallet** — Add funds and pay from wallet balance
+- **Loyalty Points** — Earned per order, redeemable at checkout
+- **Order History** — See all past orders with status and details
+- **Admin Dashboard** — Platform stats, order list with status updates, vendor list
+- **Dark Mode** — Full dark/light theme toggle, saved per session
+
+---
+
+## Tech Stack
+
+| Layer     | Technology                               |
+|-----------|------------------------------------------|
+| Frontend  | React 19, React Router 7, Axios          |
+| Styling   | Tailwind CSS v4, custom design system    |
+| Dev Build | Vite (rolldown-vite)                     |
+| Data      | `localStorage` mock (no backend needed)  |
+
+---
+
+## Project Structure
 
 ```
-SRMiggy/
-├── backend/
-│   └── src/main/
-│       ├── java/com/srmiggy/
-│       │   ├── config/        # Security, CORS, JWT config
-│       │   ├── controller/    # REST API controllers
-│       │   ├── dto/           # Request/response DTOs
-│       │   ├── model/         # JPA entities
-│       │   ├── repository/    # Spring Data repositories
-│       │   ├── security/      # JWT filter and utils
-│       │   └── service/       # Business logic
-│       └── resources/
-│           ├── application.properties
-│           └── data.sql       # Auto-seeded dev data
+Slurp/
 └── frontend/
     └── src/
-        ├── components/        # Shared UI components (Navbar, etc.)
+        ├── components/        # Shared UI (Navbar, Welcome, ProtectedRoute)
         ├── context/           # React context (Auth, Cart, Theme)
+        ├── design-system.jsx  # Design tokens, icons, and component atoms
         ├── pages/             # Page-level components
-        └── utils/             # API client (Axios)
+        └── utils/
+            ├── api.js         # localStorage mock API (no backend)
+            └── mockData.js    # Seed vendors, menu items, slots, admin user
 ```
 
 ---
 
-## 🔐 API Reference
-
-| Method | Endpoint                              | Description               |
-|--------|---------------------------------------|---------------------------|
-| POST   | `/api/auth/register`                  | Register a new user       |
-| POST   | `/api/auth/login`                     | Login and get JWT token   |
-| GET    | `/api/vendors`                        | List all active vendors   |
-| GET    | `/api/menu/vendor/{id}`               | Get a vendor's menu       |
-| POST   | `/api/orders`                         | Place an order            |
-| GET    | `/api/orders`                         | Get current user's orders |
-| POST   | `/api/payments/pay-with-wallet`       | Pay via wallet            |
-| GET    | `/api/wallet/balance`                 | Get wallet balance        |
-| POST   | `/api/wallet/add-money`               | Top up wallet             |
-| GET    | `/api/wallet/loyalty-points`          | Get loyalty points        |
-| GET    | `/api/admin/stats`                    | Platform stats (Admin)    |
-
----
-
-## 🧪 Running Tests
+## Running the Frontend Linter
 
 ```bash
-# Backend tests
-cd backend
-mvn test
-
-# Frontend lint check
 cd frontend
 npm run lint
 ```
 
 ---
 
-## 📦 Building for Production
-
-### Backend
-
-```bash
-cd backend
-mvn clean package -DskipTests
-java -jar target/srmiggy-backend-1.0.0.jar
-```
-
-### Frontend
+## Building for Production
 
 ```bash
 cd frontend
@@ -184,23 +210,39 @@ npm run build
 # Output: frontend/dist/
 ```
 
-Deploy `dist/` to Vercel, Netlify, or any static host. Set `VITE_API_URL` in `.env.production` to point to your backend:
-
-```env
-VITE_API_URL=https://your-backend-domain.com/api
-```
+Deploy the `dist/` folder to any static host (GitHub Pages, Vercel, Netlify, etc.). No backend configuration is required.
 
 ---
 
-## 🗄️ Production Database (Supabase)
+## Optional: Backend (Spring Boot)
 
-To use Supabase PostgreSQL instead of H2:
+A Spring Boot backend exists in `backend/` for production deployments with a real database. It is **not needed** to run or test the app locally.
+
+### Start the backend (requires Java 17+ and Maven 3.6+)
+
+```bash
+cd backend
+mvn spring-boot:run
+```
+
+Backend starts at `http://localhost:8080`. To connect the frontend to it, set:
+
+```env
+VITE_API_URL=http://localhost:8080/api
+```
+
+**H2 in-memory console (dev only):** http://localhost:8080/h2-console  
+- JDBC URL: `jdbc:h2:mem:testdb`
+- Username: `sa`
+- Password: *(leave empty)*
+
+### Production database (Supabase PostgreSQL)
 
 1. Create a project at [supabase.com](https://supabase.com)
 2. Run `backend/src/main/resources/supabase-schema.sql` in the SQL Editor
 3. Run `backend/src/main/resources/supabase-seed-data.sql` for initial data
-4. Fill in your credentials in `backend/src/main/resources/application-supabase.properties`
-5. Start the backend with the Supabase profile:
+4. Fill in credentials in `backend/src/main/resources/application-supabase.properties`
+5. Start with the Supabase profile:
 
 ```bash
 cd backend
@@ -209,23 +251,38 @@ mvn spring-boot:run -Dspring-boot.run.profiles=supabase
 
 ---
 
-## 🐛 Troubleshooting
+## GitHub Pages Deployment
 
-| Problem | Fix |
-|---|---|
-| Port 8080 in use | Change `server.port` in `application.properties` |
-| Frontend can't reach backend | Make sure backend is running on port 8080 |
-| CORS errors | Check `cors.allowed-origins` in `application.properties` |
-| Build fails | Delete `node_modules/` and re-run `npm install` |
-| Blank page after deploy | Configure hosting to redirect all routes to `index.html` |
-| Data missing after restart | H2 is in-memory; data resets on each restart (expected in dev) |
+The frontend is automatically deployed to **https://helloojasmutreja.github.io/Slurp/** on every push to `main` via the `deploy.yml` workflow.
+
+One-time setup in repo settings:
+
+1. Go to **Settings → Pages** and set Source to **GitHub Actions**.
+2. *(Optional)* Add a repository variable under **Settings → Variables → Actions**:
+   - Name: `VITE_API_URL`
+   - Value: URL of your deployed backend, e.g. `https://your-backend.onrender.com/api`
+
+   If not set, the deployed app runs fully in mock mode.
 
 ---
 
-## 👥 Contributors
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| App shows blank page | Clear `localStorage` in DevTools and reload |
+| Login fails | Use `admin` / `admin123`, or register a new customer account |
+| Cart is empty after reload | Cart is in React state — it resets on page reload (expected) |
+| Build fails | Delete `node_modules/` and re-run `npm install` |
+| Blank page after deploy | Configure hosting to redirect all routes to `index.html` |
+| Backend port 8080 in use | Change `server.port` in `application.properties` |
+
+---
+
+## Contributors
 
 Built as a campus food delivery solution for SRM University students.
 
-## 📄 License
+## License
 
 This project is for educational purposes.

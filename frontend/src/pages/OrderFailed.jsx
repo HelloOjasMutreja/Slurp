@@ -25,7 +25,7 @@ const OrderFailed = () => {
         </div>
         
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          ❌ Failed to Place Order
+          Failed to Place Order
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">
           We're sorry, but your order could not be processed. This could be due to payment issues or system errors.
@@ -33,7 +33,7 @@ const OrderFailed = () => {
 
         <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-xl p-4 mb-6">
           <p className="text-sm text-red-800 dark:text-red-300">
-            💡 <strong>What you can do:</strong>
+            <strong>What you can do:</strong>
           </p>
           <ul className="text-sm text-red-700 dark:text-red-400 mt-2 text-left list-disc list-inside">
             <li>Check your wallet balance or payment method</li>
@@ -45,7 +45,7 @@ const OrderFailed = () => {
         <div className="space-y-3">
           <button
             onClick={() => navigate('/checkout')}
-            className="w-full bg-primary-500 dark:bg-orange-500 text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
+            className="w-full bg-[#C94B1D] dark:bg-[#E85A25] text-white py-3 rounded-xl hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold"
           >
             Try Again
           </button>
